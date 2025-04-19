@@ -24,11 +24,17 @@ h1 {
 }
 .logo {
   height:180px;
-  width:250px;
+  width:270px;
   float: left;
+  margin-left: 30px;
+  margin-top: 5px;
+  box-shadow: #000000 0px 0px 1px;
   
 }
-
+.logo-text {
+  margin-right: 20px;
+  
+}
 .wrapper {
   padding: 0 20px; /* 30px space on left and right */
   max-width: 1200px;
