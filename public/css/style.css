@@ -361,6 +361,7 @@ h1 {
     height: 150px;
     width: 170px;
     float: left;
+    border-radius: 10px;
     
     margin-left: 10px;
   }
