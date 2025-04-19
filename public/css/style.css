@@ -114,6 +114,7 @@ button {
   gap: 1rem;
   justify-content: center;
   perspective: 1000px;
+  font-size: 1.4rem;
   
 }
 
