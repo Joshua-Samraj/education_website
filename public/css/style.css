@@ -11,15 +11,11 @@ header {
   color: #ffffff;
   text-align: center;
   
+  
 }
 
 /* Make header smaller on screens smaller than 600px */
-@media (max-width: 600px) {
-  header {
-    padding: 2rem 1rem;
-    font-size: 1rem;
-  }
-}
+
 
 h1 {
   text-shadow: #000000 1px 1px 1px;
