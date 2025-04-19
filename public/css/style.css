@@ -106,39 +106,39 @@ button {
   outline: none;
 }
 
-
 .spark-text {
-  color: #ff9e00;
-  animation: thunderEffect 1.8s infinite;
-  text-shadow: 0 0 5px #ff9e00;
+  color: #ff4d4d;
+  animation: redThunderEffect 1.8s infinite;
+  text-shadow: 0 0 5px #ff1a1a;
 }
 
-@keyframes thunderEffect {
+@keyframes redThunderEffect {
   0%, 5%, 10%, 100% {
-    text-shadow: 0 0 2px #fff, 0 0 10px #fbb034, 0 0 20px #ffdd00;
-    color: #fff8dc;
+    text-shadow: 0 0 2px #ff4d4d, 0 0 5px #ff4d4d;
+    color: #ff4d4d;
   }
   6%, 11% {
     text-shadow: 0 0 0 transparent;
-    color: #ff9e00;
+    color: #ff4d00;
   }
   20%, 21%, 22% {
-    text-shadow: 0 0 15px #ffe600, 0 0 30px #ffffff;
-    color: #ffffff;
+    text-shadow: 0 0 15px #ff3333, 0 0 30px #ff6666;
+    color: #ff4d4d;
   }
   23%, 24% {
     text-shadow: none;
-    color: #ff9e00;
+    color: #ff3300;
   }
   50% {
-    text-shadow: 0 0 30px #fff, 0 0 60px #ffff33;
-    color: #ffffff;
+    text-shadow: 0 0 30px #ff1a1a, 0 0 60px #ff4d4d;
+    color: #ff4d4d;
   }
   51%, 52% {
     text-shadow: none;
-    color: #ff9e00;
+    color: #ff1a00;
   }
 }
+
 
 
 
