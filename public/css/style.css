@@ -13,6 +13,7 @@ header {
   padding: 10px
   
   
+  
 }
 
 /* Make header smaller on screens smaller than 600px */
@@ -79,6 +80,27 @@ button {
   
   
 }
+
+.form-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+
+
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -189,14 +211,20 @@ canvas {
 }
 
 .modal-content {
-  background-color: white;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(12px); /* For Safari support */
   margin: 10% auto;
   padding: 2rem;
   border-radius: 10px;
   width: 90%;
   max-width: 400px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  color: #fff; /* Optional: to ensure text contrasts well */
+  border-color: #ccc;
 }
+
 
 .modal-content input {
   display: block;
@@ -324,17 +352,26 @@ h1 {
 /* =============== Responsive Media Queries ================= */
 @media (max-width: 768px) {
   .logo {
-    height: 50px;
-    width: 100px;
+    height: 150px;
+    width: 170px;
     float: left;
-    display: block;
-    margin: 0 auto;
+    
+    margin-left: 10px;
   }
   
   header {
 
     
     padding: 15px 0;
+  }
+
+  .student-card:hover {
+    background: #285c68;
+    color: #cdeb6b;
+    box-shadow: #000000 0px 0px 10px;
+    
+  
+    
   }
   
   .wrapper {
@@ -372,6 +409,15 @@ h1 {
     height: 100px;
     width: 140px;
     float: left;
+    margin-right: 10px;
+  }
+  .student-card:hover {
+    background: #285c68;
+    color: #cdeb6b;
+    box-shadow: #000000 0px 0px 10px;
+    
+  
+   
   }
   
   
@@ -414,14 +460,74 @@ h1 {
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 320px) {
   .logo {
-    height: 100px;
-    width: 140px;
+    height: 50px;
+    width: 100px;
+    margin-right: 10px;
+  }
+  .student-card:hover {
+    background: #285c68;
+    color: #cdeb6b;
+    box-shadow: #000000 0px 0px 10px;
+    
+  
+   
+  }
+  header {
+    padding: 9px 0;
+    
+  }
+
+  h1 {
+    margin-top: 72px;
+  }
+  
+  .student-card {
+    padding: 0.8rem;
+  }
+
+  }
+  .scroll-text {
+    padding: 5px 0;
+  }
+  
+  .scroll-text p {
+    font-size: 0.8rem;
+  }
+  
+  .modal-content {
+    margin: 25% auto;
+    padding: 1rem;
+  }
+
+
+
+
+
+@media (max-width: 375px) {
+  .logo {
+    height: 70px;
+    width: 100px;
+    margin-right: 10px;
+  }
+
+  .student-card:hover {
+    background: #285c68;
+    color: #cdeb6b;
+    box-shadow: #000000 0px 0px 10px;
+    
+  
+   
   }
   
   header {
-    padding: 10px 0;
+    padding: 9px 0;
+    
+  }
+
+  h1 {
+    margin-top: 72px;
   }
   
   .student-card {
@@ -441,5 +547,4 @@ h1 {
     padding: 1rem;
   }
 }
-
 /* Existing remaining CSS stays the same */
