@@ -7,15 +7,20 @@ body {
 }
 
 header {
-  /* background: #013f4a; */
   background: linear-gradient(135deg, #013f4a, #035f74, #013f4a, #035f74);
   color: #ffffff;
-  
-  
   text-align: center;
-  padding: 4rem;
   
 }
+
+/* Make header smaller on screens smaller than 600px */
+@media (max-width: 600px) {
+  header {
+    padding: 2rem 1rem;
+    font-size: 1rem;
+  }
+}
+
 h1 {
   text-shadow: #000000 1px 1px 1px;
 }
