@@ -107,6 +107,40 @@ button {
 }
 
 
+.spark-text {
+  color: #ff9e00;
+  animation: thunderEffect 1.8s infinite;
+  text-shadow: 0 0 5px #ff9e00;
+}
+
+@keyframes thunderEffect {
+  0%, 5%, 10%, 100% {
+    text-shadow: 0 0 2px #fff, 0 0 10px #fbb034, 0 0 20px #ffdd00;
+    color: #fff8dc;
+  }
+  6%, 11% {
+    text-shadow: 0 0 0 transparent;
+    color: #ff9e00;
+  }
+  20%, 21%, 22% {
+    text-shadow: 0 0 15px #ffe600, 0 0 30px #ffffff;
+    color: #ffffff;
+  }
+  23%, 24% {
+    text-shadow: none;
+    color: #ff9e00;
+  }
+  50% {
+    text-shadow: 0 0 30px #fff, 0 0 60px #ffff33;
+    color: #ffffff;
+  }
+  51%, 52% {
+    text-shadow: none;
+    color: #ff9e00;
+  }
+}
+
+
 
 .card-container {
   display: flex;
