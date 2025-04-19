@@ -23,7 +23,7 @@ h1 {
   text-shadow: #000000 1px 1px 1px;
 }
 .logo {
-  height:200px;
+  height:180px;
   width:250px;
   float: left;
   
@@ -505,11 +505,14 @@ h1 {
 
 
 
-@media (max-width: 375px) {
+@media (max-width: 425px) {
   .logo {
-    height: 70px;
-    width: 100px;
+    height: 80px;
+    width: 110px;
     margin-right: 10px;
+    margin-left: 90px;
+    margin-top: 20px;
+    float: none;
   }
 
   .student-card:hover {
@@ -527,7 +530,7 @@ h1 {
   }
 
   h1 {
-    margin-top: 72px;
+    margin-top: 10px;
   }
   
   .student-card {
