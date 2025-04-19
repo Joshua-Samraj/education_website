@@ -114,6 +114,7 @@ button {
   gap: 1rem;
   justify-content: center;
   perspective: 1000px;
+  
 }
 
 /* Two-column layout on larger screens */
@@ -531,7 +532,14 @@ h1 {
   
    
   }
-  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    perspective: 1000px;
+    text-align: center;
+  }
   header {
     padding: 9px 0;
     
@@ -539,6 +547,13 @@ h1 {
 
   h1 {
     margin-top: 10px;
+  }
+  .donate-btn {
+    height: 30px;
+    width: 60px;
+    padding: 0.5rem 1rem;
+    font-size: 1.3rem;
+    text-align: center;
   }
   
   .student-card {
