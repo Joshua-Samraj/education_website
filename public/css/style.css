@@ -406,8 +406,8 @@ h1 {
 
 @media (max-width: 480px) {
   .logo {
-    height: 100px;
-    width: 140px;
+    height: 70px;
+    width: 110px;
     float: left;
     margin-right: 10px;
   }
