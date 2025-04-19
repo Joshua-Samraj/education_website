@@ -10,16 +10,16 @@
 
 </head>
 <body>
-  
-  
+
   <button onclick="localStorage.removeItem('isLoggedIn'); location.reload();" class="logout-btn">Logout</button>
 
   <div id="loginModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
       <h2>Login to see more details</h2>
-      <input type="text" id="username" placeholder="Username">
-      <input type="password" id="password" placeholder="Password">
+      <input type="text" id="username" class="form-input" placeholder="Username">
+      <input type="password" id="password" class="form-input" placeholder="Password">
+
       <button onclick="submitLogin()">Login</button>
       <p> To see student details click the EXIT button</p>
     </div>
@@ -27,9 +27,9 @@
 
   <div id="mainContent">
     <header>
-      <img src="image/logo_with_reg.png" alt="logo" class="logo">
-      <h1>Living Hope Charitable <span style="color:#e61d3f;">Future Sparks</span></h1>
-      <h2>Educational Donation Fund</h2>
+      <img src="image/logo_white.jpg" alt="logo" class="logo">
+      <h1>Living Hope Trust <span style="color:#e61d3f;">Future Sparks</span></h1>
+      <h3>Educational Fundraising</h3>
       <p>Help students achieve their dreams through your donations</p>
       <a href="tel:9500561937" class="donate-btn" style="background-color:#e61d3f;">Call Us</a>
       
