@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Educational Donation Fund</title>
+  <link rel="stylesheet" href="css/style.css">
+ 
+  <script src="https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.min.js"></script>
+
+</head>
+<body>
+  
+  
+  <button onclick="localStorage.removeItem('isLoggedIn'); location.reload();" class="logout-btn">Logout</button>
+
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Login to see more details</h2>
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="submitLogin()">Login</button>
+      <p> To see student details click the EXIT button</p>
+    </div>
+  </div>
+
+  <div id="mainContent">
+    <header>
+      <img src="image/logo_with_reg.png" alt="logo" class="logo">
+      <h1>Living Hope Charitable <span style="color:#e61d3f;">Future Sparks</span></h1>
+      <h2>Educational Donation Fund</h2>
+      <p>Help students achieve their dreams through your donations</p>
+      <a href="tel:9500561937" class="donate-btn" style="background-color:#e61d3f;">Call Us</a>
+      
+    </header>
+    <div class="scroll-text">
+      <p>🎓 Help brighten a student's future today! Your donation makes a difference 💖 | Contact us at: livinghopecharitable@gmail.com | Thank you for your support! 🙏</p>
+    </div>
+    
+
+    <section>
+      <div class="wrapper">
+        <h2>Students in Need</h2>
+        <div class="card-container" id="studentCards"></div>
+      </div>
+    </section>
+
+
+    <div class="statinory-container">
+      <div class="wrapper">
+        <a href="statinory.html" class="donate-btn">Donate Stationery</a>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Educational Donation Fund. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    const students = [
+      { 
+      name: "A.Manish kumar", 
+      age: 13,
+       grade: "8th Grade", 
+      location: "REDDIARPATTI, TIRUNELVELI, India", 
+      need: "₹5,000 for books and tuition", 
+      image: "image/boy.png", 
+      detailPage: "Manish kumar.html" 
+    },
+
+
+      { name: "Subarna.A", 
+      age: 15, 
+      grade: "10th Grade", 
+      location: "ITTERI PUDHU KULAM TIRUNELVELI", 
+      need: "₹8,000 for exam fees", 
+      image: "image/girl.png", 
+      detailPage: "Subarna.A.html" 
+    },
+      { name: "Bramamuthu.G", 
+      age: 15, 
+      grade: "12th Grade", 
+      location: "Tirunelveli, Tamil Nadu", 
+      need: "₹5,000 for books and tuition", 
+      image: "image/girl.png",
+      detailPage: "bramamuthu.html" 
+    },
+      { name: "Riona Lithesha.R", 
+      age: 6, 
+      grade: "1st Grade", 
+      location: "Patna, India", 
+      need: "₹22,850 for books and tuitions", 
+      image: "image/girl.png", 
+      detailPage: "riona lithesha.html" 
+
+      },
+      { name: "Varshini.R", 
+      age: 11, 
+      grade: "6th Grade", 
+      location: "Tirunelveli, Tamil Nadu", 
+      need: "₹24,000 for exam fees", 
+      image: "image/girl.png", 
+      detailPage: "Varshini.html" 
+        
+      },
+      
+    ];
+
+    function generateStudentCards() {
+      const studentCardsContainer = document.getElementById("studentCards");
+      students.forEach(student => {
+        const studentCard = document.createElement("a");
+        studentCard.classList.add("student-card");
+        studentCard.href = "#";
+        studentCard.setAttribute("onclick", `openLoginBox('${student.detailPage}')`);
+
+        studentCard.innerHTML = `
+          <img src="${student.image}" alt="${student.name}" class="student-img">
+          <img src="image/verify.png" alt="Verify" class="student-img">
+          <h3>${student.name}</h3>
+          <p><strong>Age:</strong> ${student.age}</p>
+          <p><strong>Class:</strong> ${student.grade}</p>
+          <p><strong>Location:</strong> ${student.location}</p>
+          <p><strong>Need:</strong> ${student.need}</p>
+          <a href="qr.html" class="donate-btn" id="donateTrigger">Donate</a>
+        `;
+        studentCardsContainer.appendChild(studentCard);
+      });
+    }
+
+    window.onload = function () {
+      generateStudentCards();
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      if (isLoggedIn !== 'true') {
+        showLoginModal();
+      }
+    };
+
+    let targetURL = "";
+
+    function openLoginBox(url) {
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      if (isLoggedIn === 'true') {
+        window.location.href = url;
+      } else {
+        targetURL = url;
+        showLoginModal();
+      }
+    }
+
+    function showLoginModal() {
+      document.getElementById('loginModal').style.display = 'block';
+      document.getElementById('mainContent').classList.add('blurred');
+    }
+
+    function closeModal() {
+      document.getElementById('loginModal').style.display = 'none';
+      document.getElementById('mainContent').classList.remove('blurred');
+    }
+    
+
+    function submitLogin() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (username === 'admin' && password === '1234') {
+        localStorage.setItem('isLoggedIn', 'true');
+        closeModal();
+        if (targetURL) {
+          window.location.href = targetURL;
+        }
+      } else {
+        alert('Incorrect credentials. Please try again.');
+      }
+    }
+
+    // Optional: close modal when clicking outside
+    window.onclick = function (event) {
+      const modal = document.getElementById('loginModal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+
+  </script>
+</body>
+</html>

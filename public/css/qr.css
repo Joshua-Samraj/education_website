@@ -1,0 +1,115 @@
+/* Basic Styles */
+body {
+    background-color: #0e0e0e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+  }
+  
+  .donation-title {
+    font-size: 2em;
+    color: #e61d3f;
+    margin-bottom: 10px;
+  }
+  
+  .donation-description {
+    font-size: 1.2em;
+    color: #f0f0f0;
+    margin-bottom: 20px;
+  }
+  
+  .qr-code {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  
+  .qr-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .instructions {
+    font-size: 1.1em;
+    margin-top: 10px;
+  }
+  
+  /* Melting Lines */
+  .melting-lines {
+    position: relative;
+    margin-top: 30px;
+  }
+  
+  .line {
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background-color: #e61d3f;
+    animation: melt 2s infinite ease-in-out;
+  }
+  
+  .line:nth-child(1) {
+    top: 20px;
+    animation-delay: 0s;
+  }
+  
+  .line:nth-child(2) {
+    top: 40px;
+    animation-delay: 0.3s;
+  }
+  
+  .line:nth-child(3) {
+    top: 60px;
+    animation-delay: 0.6s;
+  }
+  
+  .line:nth-child(4) {
+    top: 80px;
+    animation-delay: 0.9s;
+  }
+  
+  /* Melting Effect */
+  @keyframes melt {
+    0% {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scaleX(0.6);
+      opacity: 0.6;
+    }
+    100% {
+      transform: scaleX(1.2);
+      opacity: 0;
+    }
+  }
+  .donate-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: #e61d3f;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .donate-btn:hover {
+    background-color: #218838;
+    box-shadow: #000000 0px 0px 10px;
+  }

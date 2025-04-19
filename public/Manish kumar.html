@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Riya Sharma - Student Details</title>
+  <link rel="stylesheet" href="css/student.css" />
+</head>
+<body>
+
+<header>
+  <h1>Student Details</h1>
+</header>
+
+<div class="container">
+  <h1>A.Manish Kumar</h1>
+  
+  <div class="info">
+    <div class="student-header">
+      <img src="image/manis kumar.png" alt="Manish Kumar" class="student-img" />
+      <h1 class="Serial_number">LHCTFS_001</h1>
+    </div>
+    
+    <p><strong>Age:</strong> 13</p>
+    <p><strong>Class:</strong> 8th Grade</p>
+    <p><strong>School:</strong> K.R.Govt.Hr.Sec.School</p>
+    <p><strong>Location:</strong> REDDIARPATTI, TIRUNELVELI, India</p>
+    <p><strong>Academic Performance:</strong> Scoring above 85% in all subjects</p>
+    <p class="donate-section"><strong>Family Background:</strong> Manish Kumar comes from a very humble background. Her father is physically handicapped — he lost the use of his right leg due to a tragic accident and is unable to work. Her mother is a homemaker and has no source of income. The family has been struggling to make ends meet with no stable financial support. Despite these hardships, Manish Kumar remains determined to pursue her education and dreams of building a better future for her family. Your support can make a real difference in her life.</p>
+    <h3 style="color: rgb(237, 250, 0);"><strong>Help Needed:</strong> ₹5,000 for books, tuition fees, stationery kit, and school uniform</h3>
+  </div>
+
+  <div class="donate-section">
+    <h2>Support Manis Kumar's Education</h2>
+    <p>Your donation will help Manis Kumar continue her studies and chase her dream of becoming a doctor.</p>
+    <a href="#" class="donate-btn" id="donateTrigger">Donate Now</a>
+  </div>
+  
+  <a href="index.html" class="donate-btn">Back to Students</a>
+</div>
+
+<div id="qrModal">
+  <div class="qr-content">
+    <h2>Scan to Donate</h2>
+    <img src="image/qr.png" alt="QR Code" />
+    <br />
+    <button onclick="closeQR()">Close</button>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; Living Hope Charitable Future Sparks. All rights reserved.</p>
+</footer>
+
+<script>
+  const qrModal = document.getElementById("qrModal");
+  const donateTrigger = document.getElementById("donateTrigger");
+
+  donateTrigger.addEventListener("click", function (e) {
+    e.preventDefault();
+    qrModal.style.display = "flex";
+  });
+
+  function closeQR() {
+    qrModal.style.display = "none";
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Riya Sharma - Student Details</title>
+  <link rel="stylesheet" href="css/student.css" />
+</head>
+<body>
+
+<header>
+  <h1>Student Details</h1>
+</header>
+
+<div class="container">
+  <h1>G.Bramamuthu</h1>
+  
+  <div class="info">
+    <div class="student-header">
+      <img src="image/girl.png" alt="bramamuthu" class="student-img" />
+      <h1 class="Serial_number">LHCTFS_003</h1>
+    </div>
+    
+    <p><strong>Age:</strong> 15</p>
+    <p><strong>Class:</strong> 12th Grade</p>
+    <p><strong>School:</strong> SARAH TUCKER HR.SEC.SCHOOL</p>
+    <p><strong>Location:</strong>  TIRUNELVELI,Tamil Nadu, India</p>
+    <p><strong>Academic Performance:</strong> Scoring above 85% in all subjects</p>
+    <p class="donate-section"><strong>Family Background:</strong>Bramamuthu is a hardworking 12th-grade student pursuing Maths and Biology at SARAH TUCKER HR.SEC.SCHOOL. Life has not been easy for her. She lost her father early, and in 2023, her brother who was the family’s only support—tragically passed away due to an electric shock. Her mother, who is 75% physically disabled, is unable to work. With no source of income, the family is struggling just to survive.
+
+      Despite these overwhelming hardships, Bramamuthu remains committed to her education, holding on to her dreams of building a better future—not just for herself, but for her mother as well. She walks a difficult road with courage, resilience, and hope in her heart. But the challenges she faces are too heavy for one child to bear alone.
+      
+      Your support can bring light into her life and help her achieve the bright future she dreams of. Whether it’s contributing toward her school fees, study materials, or even daily meals, your kindness can make a lasting impact. Together, we can ensure that financial hardship doesn’t stand in the way of her education and her dreams.
+      
+      Please consider donating—every little bit counts. </p>
+    <h3 style="color: rgb(237, 250, 0);"><strong>Help Needed:</strong> ₹5,000 for books, tuition fees, stationery kit, and school uniform</h3>
+  </div>
+
+  <div class="donate-section">
+    <h2>Support Bramamuthu's Education</h2>
+    <p>Your donation will help Bramamuthu continue her studies and chase her dream of becoming a doctor.</p>
+    <a href="#" class="donate-btn" id="donateTrigger">Donate Now</a>
+  </div>
+  
+  <a href="index.html" class="donate-btn">Back to Students</a>
+</div>
+
+<div id="qrModal">
+  <div class="qr-content">
+    <h2>Scan to Donate</h2>
+    <img src="image/qr.png" alt="QR Code" />
+    <br />
+    <button onclick="closeQR()">Close</button>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; Living Hope Charitable Future Sparks. All rights reserved.</p>
+</footer>
+
+<script>
+  const qrModal = document.getElementById("qrModal");
+  const donateTrigger = document.getElementById("donateTrigger");
+
+  donateTrigger.addEventListener("click", function (e) {
+    e.preventDefault();
+    qrModal.style.display = "flex";
+  });
+
+  function closeQR() {
+    qrModal.style.display = "none";
+  }
+</script>
+
+</body>
+</html>

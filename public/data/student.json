@@ -1,0 +1,19 @@
+[
+    {
+      "name": "A.Manish kumar",
+      "age": 13,
+      "grade": "8th Grade",
+      "location": "REDDIARPATTI, TIRUNELVELI, India",
+      "need": "₹5,000 for books and tuition",
+      "image": "image/boy.png"
+    },
+    {
+      "name": "Subarna.A",
+      "age": 15,
+      "grade": "10th Grade",
+      "location": "ITTERI PUDHU KULAM TIRUNELVELI",
+      "need": "₹8,000 for exam fees",
+      "image": "image/girl.png"
+    }
+  ]
+  
