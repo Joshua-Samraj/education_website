@@ -104,9 +104,24 @@ button {
 }
 
 /* Full-width cards on smaller screens */
-@media (max-width: 600px) {
+@media (max-width: 410px) {
   .student-card {
     flex: 1 1 100%;
+  }
+
+  header {
+    background: linear-gradient(135deg, #013f4a, #035f74, #013f4a, #035f74);
+    color: #ffffff;
+    text-align: center;
+    padding: 10px
+    
+    
+  }
+  .logo {
+    height:100px;
+    width:150px;
+    float: left;
+    
   }
 }
 
@@ -302,3 +317,129 @@ h1 {
     transform: translateX(-100%);
   }
 }
+
+
+/* Existing CSS remains the same until the media queries */
+
+/* =============== Responsive Media Queries ================= */
+@media (max-width: 768px) {
+  .logo {
+    height: 50px;
+    width: 100px;
+    float: left;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  header {
+
+    
+    padding: 15px 0;
+  }
+  
+  .wrapper {
+    padding: 0 15px;
+  }
+  
+  .student-card {
+    flex: 1 1 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .student-img, .verify-img {
+    float: none;
+    display: block;
+    margin: 0 auto 15px;
+  }
+  
+  .modal-content {
+    margin: 20% auto;
+    width: 85%;
+  }
+  
+  .container {
+    margin: 1rem auto;
+    padding: 1rem;
+  }
+  
+  .info p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 100px;
+    width: 140px;
+    float: left;
+  }
+  
+  
+  
+  h1 {
+    font-size: 1.5rem;
+    margin-top: 130px;
+  }
+  
+  .students {
+    padding: 1rem;
+  }
+  
+  .student-img {
+    height: 120px;
+    width: 120px;
+  }
+  
+  .verify-img {
+    height: 20px;
+    width: 70px;
+  }
+  
+  .scroll-text p {
+    font-size: 0.9rem;
+    animation: scroll-left 15s linear infinite;
+  }
+  
+  .modal-content {
+    padding: 1.5rem;
+  }
+  
+  .donate-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .Serial_number {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 360px) {
+  .logo {
+    height: 100px;
+    width: 140px;
+  }
+  
+  header {
+    padding: 10px 0;
+  }
+  
+  .student-card {
+    padding: 0.8rem;
+  }
+  
+  .scroll-text {
+    padding: 5px 0;
+  }
+  
+  .scroll-text p {
+    font-size: 0.8rem;
+  }
+  
+  .modal-content {
+    margin: 25% auto;
+    padding: 1rem;
+  }
+}
+
+/* Existing remaining CSS stays the same */
