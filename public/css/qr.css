@@ -1,83 +1,301 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Donate Now</title>
-  <link rel="stylesheet" href="css/qr.css">
-  <style>
-    .copy-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      /* margin-bottom: 10px; */
-      text-align: center;
-      margin-left: 70px;
-    }
-    .copy-btn {
-      padding: 5px 10px;
-      background-color: #4CAF50;
-      color: rgb(0, 0, 0);
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-right: 50px;
-    }
-    .copy-btn:hover {
-      background-color: #45a049;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1 class="donation-title">Donate to Help Students</h1>
-    <p class="donation-description">
-      Your generous donations will help provide Books, Tuition fees, and Educational Resources to students in need.
-    </p>
-    <div class="qr-code">
-      <img src="image/logo_white.jpg" alt="Living Hope Logo" class="logo">
-      <h2><strong>Living Hope Charitable Trust</strong></h2>
-      <h2><strong>Axis Bank</strong> </h2>
+/* Basic Styles */
+body {
+  background-color: #0e0e0e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+}
 
-      <div class="copy-container">
-        <h2>Acc No: <span id="accNo"><strong>922020006385038 </strong></span></h2>
-        <button class="copy-btn" onclick="copyText('accNo')">Copy</button>
-      </div>
+.container {
+  text-align: center;
+  padding: 20px;
+  background:black;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  max-width: 90%;
+}
 
-      <div class="copy-container">
-        <h2>IFSC CODE: <span id="ifsc"><strong>UTIB0002095</strong></span></h2>
-        <button class="copy-btn" onclick="copyText('ifsc')">Copy</button>
-      </div>
+.donation-title {
+  font-size: 2em;
+  color: #e61d3f;
+  margin-bottom: 10px;
+}
 
-      <div class="copy-container">
-        <h2>Branch: <span id="branch"><strong>Palayamkottai</strong></span></h2>
-        
-      </div>
-    </div>
+.donation-description {
+  font-size: 1.2em;
+  color: #f0f0f0;
+  margin-bottom: 20px;
+}
 
-    <p class="instructions">Kindly mention a Student Name and Student Code (Eg.LHCTFS_00) and Whatsapp a screenshot  this number </p>
-    <!-- <a href="https://wa.me/+919500561937" class="donate-btn" style="background-color: #ffffff; width: 400px; margin-left: 200px;"><img src="image/WHATSAPP.png" alt="" class="whatsapp-logo"><p style="font-size: 2.1rem; color: black; margin-top: 50px;">+919500561937</p></a> -->
-     <a href="https://wa.me/+919500561937" class="donate-btn" style="margin-right: 10px; background-color: #45a049;" > +919500561937 </a>
-    <a href="home.html" class="donate-btn" style="margin-right: 10px;">STUDENT DETAILS</a>
+.qr-code {
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 30px;
+  border-radius: 15px;
+  background-color: #e0f8f5;
+  color: #445a67;
+  width: 800px;
+  position: relative;
+  box-shadow: #ffffff 0px 0px 10px;
+}
 
-    <div class="melting-lines">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
-  </div>
+.qr-code h2, .qr-code h3, .qr-code h1 {
+  margin: 10px 0;
+  font-weight: 500;
+  color: #2c3e50;
+}
 
-  <script>
-    function copyText(elementId) {
-      const text = document.getElementById(elementId).innerText;
-      navigator.clipboard.writeText(text).then(() => {
-        alert(`Copied: ${text} `);
-      }).catch(err => {
-        alert('Failed to copy text');
-        console.error(err);
-      });
-    }
-  </script>
-</body>
-</html>
+.qr-code strong {
+  color: #34495e;
+}
+
+.logo {
+  height: 130px;
+  width: 180px;
+  float: right;
+  margin-top: 50px;
+  margin-right: 50px;
+  border-radius: 10px;
+  box-shadow: #000000 0px 0px 10px;
+}
+
+.qr-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.instructions {
+  font-size: 1.1em;
+  margin-top: 10px;
+}
+
+/* Melting Lines */
+.melting-lines {
+  position: relative;
+  margin-top: 30px;
+}
+
+.line {
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  background-color: #e61d3f;
+  animation: melt 2s infinite ease-in-out;
+}
+
+.line:nth-child(1) {
+  top: 20px;
+  animation-delay: 0s;
+}
+
+.line:nth-child(2) {
+  top: 40px;
+  animation-delay: 0.3s;
+}
+
+.line:nth-child(3) {
+  top: 60px;
+  animation-delay: 0.6s;
+}
+
+.line:nth-child(4) {
+  top: 80px;
+  animation-delay: 0.9s;
+}
+
+/* Melting Effect */
+@keyframes melt {
+  0% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scaleX(0.6);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scaleX(1.2);
+    opacity: 0;
+  }
+}
+
+.donate-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: #e61d3f;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.donate-btn:hover {
+  background-color: #218838;
+  box-shadow: #000000 0px 0px 10px;
+}
+
+/* Laptop/Desktop View (1024px and above) */
+@media (min-width: 1024px) {
+  .container {
+    width: 80%;
+    max-width: 1200px;
+    padding: 30px;
+  }
+  
+  .qr-code {
+    width: 800px;
+    padding: 30px;
+    transition: transform 0.2s ease;
+  }
+  .qr-code:hover {
+    transform: scale(1.1);
+  }
+  
+  .logo {
+    height: 150px;
+    margin-top: 50px;
+    margin-right: 70px;
+  }
+  
+  .qr-img {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+/* Tablet View (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    width: 90%;
+    padding: 25px;
+  }
+  
+  .qr-code {
+    width: 90%;
+    padding: 25px;
+  }
+  
+  .logo {
+    height: 120px;
+    margin-top: 50px;
+    margin-right: 30px;
+  }
+  
+  .qr-img {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .donation-title {
+    font-size: 1.8em;
+  }
+  
+  .donation-description {
+    font-size: 1.1em;
+  }
+}
+
+/* Mobile View (425px and below) */
+@media (max-width: 425px) {
+  body {
+    padding: 20px 0;
+    align-items: flex-start;
+  }
+  
+  .container {
+    width: 350px;
+    margin: 20px auto;
+    padding: 15px;
+  }
+  
+  .qr-code {
+    width: 90%;
+    padding: 15px;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: block;
+    font-size: 0.9rem;
+  }
+  
+  .logo {
+    float: none;
+    height: 90px;
+    width: 140px;
+    margin: 20px auto;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .qr-img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .donation-title {
+    font-size: 1.5em;
+  }
+  
+  .donation-description {
+    font-size: 1em;
+    margin-bottom: 15px;
+  }
+  
+  .instructions {
+    font-size: 0.9em;
+  }
+  
+  .donate-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .melting-lines {
+    margin-top: 20px;
+  }
+  
+  .line {
+    height: 8px;
+  }
+  
+  .line:nth-child(1) {
+    top: 15px;
+  }
+  
+  .line:nth-child(2) {
+    top: 30px;
+  }
+  
+  .line:nth-child(3) {
+    top: 45px;
+  }
+  
+  .line:nth-child(4) {
+    top: 60px;
+  }
+}
+
+/* Small Mobile View (375px and below) */
+@media (max-width: 375px) {
+  .qr-img {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .donation-title {
+    font-size: 1.3em;
+  }
+  
+  .qr-code h2, .qr-code h3, .qr-code h1 {
+    font-size: 0.9em;
+  }
+}
