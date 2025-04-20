@@ -19,7 +19,12 @@ body {
   position: relative;
   max-width: 90%;
 }
-
+.whatsapp-logo {
+  width: 150px;
+  height: 150px;
+  /* margin-left: 100px; */
+  float: left;
+}
 .donation-title {
   font-size: 2em;
   color: #e61d3f;
@@ -137,6 +142,7 @@ body {
   border-radius: 5px;
   text-decoration: none;
   font-size: 1rem;
+  margin-right: 250px;
 }
 
 .donate-btn:hover {
@@ -145,7 +151,7 @@ body {
 }
 
 /* Laptop/Desktop View (1024px and above) */
-@media (min-width: 1024px) {
+@media (min-width: 1024px ) and (max-width: 2224px) {
   .container {
     width: 80%;
     max-width: 1200px;
