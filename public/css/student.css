@@ -119,3 +119,133 @@ h1 {
   cursor: pointer;
 }
   
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .student-img {
+    height: 120px;
+    width: 120px;
+  }
+
+  .donate-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .qr-content {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .qr-content img {
+    width: 160px;
+  }
+
+  .qr-content button {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile phones (480px and below) */
+@media (max-width: 480px) {
+  header,
+  footer {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .container {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .student-img {
+    height: 100px;
+    width: 100px;
+  }
+
+  .Serial_number {
+    font-size: 16px;
+  }
+
+  .donate-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .qr-content {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .qr-content img {
+    width: 140px;
+  }
+
+  .qr-content button {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+  .donate-section {
+    padding: 1rem;
+    font-size: 0.9rem; /* You can go even smaller, like 0.85rem or 0.8rem */
+    line-height: 1.6;  /* Optional: improves readability with smaller text */
+  }
+  
+  
+}
+
+
+@media (max-width: 320px) {
+  header,
+  footer {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .container {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .student-img {
+    height: 100px;
+    width: 100px;
+  }
+
+  .Serial_number {
+    font-size: 16px;
+  }
+
+  .donate-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .qr-content {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .qr-content img {
+    width: 140px;
+  }
+
+  .qr-content button {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+  .donate-section {
+    padding: 1rem;
+    font-size: 0.7rem; /* You can go even smaller, like 0.85rem or 0.8rem */
+    line-height: 1.6;  /* Optional: improves readability with smaller text */
+  }
+  
+  
+}
