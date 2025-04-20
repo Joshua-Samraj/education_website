@@ -6,9 +6,11 @@
   <!-- Basic Meta for WhatsApp and social -->
   <meta property="og:title" content="Support Education | Future Sparks by Living Hope Trust">
   <meta property="og:description" content="Donate and help students achieve their dreams. Every contribution counts.">
-  <meta property="og:image" content="https://education-website-liart.vercel.app/image/thumbline.png">
+  <meta property="og:image" content="https://education-website-liart.vercel.app/image/thumbline.jpg">
   <meta property="og:url" content="https://education-website-liart.vercel.app/">
   <meta property="og:type" content="website">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
   <title>Educational Donation Fund</title>
   <link rel="stylesheet" href="css/style.css">
@@ -25,7 +27,12 @@
       <span class="close" onclick="closeModal()">&times;</span>
       <h2>Login to see more details</h2>
       <input type="text" id="username" class="form-input" placeholder="Username">
-      <input type="password" id="password" class="form-input" placeholder="Password">
+      <div class="password-container">
+        <input type="password" id="password" class="form-input" placeholder="Password">
+        <i class="fa-solid fa-eye toggle-password" id="togglePasswordIcon" onclick="togglePassword()"></i>
+      </div>
+      
+      
 
       <button onclick="submitLogin()">Login</button>
       <p> To see student details click the EXIT button</p>
@@ -172,6 +179,21 @@
       document.getElementById('mainContent').classList.remove('blurred');
     }
     
+    function togglePassword() {
+      const passwordInput = document.getElementById("password");
+      const icon = document.getElementById("togglePasswordIcon");
+
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+      } else {
+        passwordInput.type = "password";
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+      }
+    }
+
 
     function submitLogin() {
       const username = document.getElementById('username').value;
