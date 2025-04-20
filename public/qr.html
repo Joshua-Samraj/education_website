@@ -5,6 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Donate Now</title>
   <link rel="stylesheet" href="css/qr.css">
+  <style>
+    .copy-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      /* margin-bottom: 10px; */
+      text-align: center;
+      margin-left: 30px;
+    }
+    .copy-btn {
+      padding: 5px 10px;
+      background-color: #4CAF50;
+      color: rgb(0, 0, 0);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .copy-btn:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -13,10 +34,29 @@
       Your generous donations will help provide books, tuition fees, and educational resources to students in need.
     </p>
     <div class="qr-code">
-      <img src="image/qr.png" alt="Donate QR Code" class="qr-img">
+      <img src="image/logo_white.jpg" alt="Living Hope Logo" class="logo">
+      <h1><strong>Living Hope Charitable Trust</strong></h1>
+      <h1><strong>Axis Bank</strong> </h1>
+
+      <div class="copy-container">
+        <h2><strong>Acc.No:</strong> <span id="accNo">922020006385038</span></h2>
+        <button class="copy-btn" onclick="copyText('accNo')">Copy</button>
+      </div>
+
+      <div class="copy-container">
+        <h2><strong>IFSC CODE:</strong> <span id="ifsc">UTIB0002095</span></h2>
+        <button class="copy-btn" onclick="copyText('ifsc')">Copy</button>
+      </div>
+
+      <div class="copy-container">
+        <h2><strong>Branch:</strong> <span id="branch">Palayamkottai</span></h2>
+        <button class="copy-btn" onclick="copyText('branch')">Copy</button>
+      </div>
     </div>
-    <p class="instructions">Scan the QR Code to Donate!</p>
-    <a href="index.html" class="donate-btn">Back to Home</a>
+
+    <p class="instructions">Click <span class="copy-btn" >copy</span> button to copy the Numbers</p>
+    <a href="home.html" class="donate-btn">STUDENT DETAILS</a>
+
     <div class="melting-lines">
       <div class="line"></div>
       <div class="line"></div>
@@ -26,7 +66,15 @@
   </div>
 
   <script>
-    // Add any additional functionality here if necessary
+    function copyText(elementId) {
+      const text = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert(`Copied: ${text} `);
+      }).catch(err => {
+        alert('Failed to copy text');
+        console.error(err);
+      });
+    }
   </script>
 </body>
 </html>
