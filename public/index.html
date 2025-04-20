@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="EN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="css/style.css">
  
   <script src="https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.min.js"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
 
 </head>
 <body>
@@ -24,7 +26,7 @@
 
   <div id="loginModal" class="modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
+      <span class="close" >&times;</span>
       <h2>Login to see more details</h2>
       <input type="text" id="username" class="form-input" placeholder="Username">
       <div class="password-container">
@@ -46,7 +48,7 @@
         <h1 style="font-size: 1.3rem;">Living Hope Trust</h1>
         <strong class="spark-text">FUTURE SPARKS</strong>
 
-      <p>Join the 2025 Educational Fundraiser | Empower a Child's Future</p>
+      <p>Join the 2025 Educational Fundraising | Empower a Child's Future</p>
       <p>Help students achieve their dreams through your donations</p>
       <a href="tel:9500561937" class="donate-btn" style="background-color:#e7681b; font-size: 0.9rem; text-align: center; width: 100px; height: 20px;">CONTACT US</a>
 
@@ -63,6 +65,7 @@
         <h2>Students in Need</h2>
         <div class="card-container" id="studentCards"></div>
       </div>
+      <button id="rzp-button">Pay Now</button>
     </section>
 
 
@@ -83,30 +86,30 @@
       name: "A.Manish kumar", 
       age: 13,
        grade: "8th Grade", 
-      location: "REDDIARPATTI, TIRUNELVELI, Tamil Nadu", 
+      location: "Reddiarpatti,Tirunelveli,Tamil Nadu", 
       need: "₹5,000 for books and tuition", 
-      image: "image/boy.png", 
+      image: "image/manis kumar.png", 
       detailPage: "Manish kumar.html" 
     },
 
 
-      { name: "Subarna.A", 
+      { name: "A.Subarna", 
       age: 15, 
       grade: "10th Grade", 
-      location: "ITTERI PUDHU KULAM TIRUNELVELI", 
+      location: "Itteri Pudhu Kulam,Tirunelveli", 
       need: "₹8,000 for exam fees", 
-      image: "image/girl.png", 
+      image: "image/subarna.png", 
       detailPage: "Subarna.A.html" 
     },
-      { name: "Bramamuthu.G", 
+      { name: "G.Bramamuthu", 
       age: 15, 
       grade: "12th Grade", 
-      location: "Tirunelveli, Tamil Nadu", 
-      need: "₹5,000 for books and tuition", 
-      image: "image/girl.png",
+      location: "Anavarathanallur,Thoothukkudi, Tamil Nadu", 
+      need: "₹13,000 for books and tuition", 
+      image: "image/bramamuthu.png",
       detailPage: "bramamuthu.html" 
     },
-      { name: "Riona Lithesha.R", 
+      { name: "R.Riona Lithesha", 
       age: 6, 
       grade: "1st Grade", 
       location: "Tirunelveli, Tamil Nadu", 
@@ -115,7 +118,7 @@
       detailPage: "riona lithesha.html" 
 
       },
-      { name: "Varshini.R", 
+      { name: "R.Varshini", 
       age: 11, 
       grade: "6th Grade", 
       location: "Tirunelveli, Tamil Nadu", 
@@ -144,6 +147,8 @@
           <p><strong>Location:</strong> ${student.location}</p>
           <p><strong>Need:</strong> ${student.need}</p>
           <a href="qr.html" class="donate-btn" id="donateTrigger">Donate</a>
+          
+
         `;
         studentCardsContainer.appendChild(studentCard);
       });
@@ -211,13 +216,50 @@
     }
 
     // Optional: close modal when clicking outside
-    window.onclick = function (event) {
-      const modal = document.getElementById('loginModal');
-      if (event.target === modal) {
-        closeModal();
-      }
-    };
+    // window.onclick = function (event) {
+    //   const modal = document.getElementById('loginModal');
+    //   if (event.target === modal) {
+    //     closeModal();
+    //   }
+    // };
 
   </script>
+  <script>
+    var options = {
+      "key": "rzp_test_sb4orrWDUFRrN2", // Replace with your Razorpay key_id
+      "amount": "1000", // Amount is in paise = ₹500
+      "currency": "INR",
+      "name": "Your Company Name",
+      "description": "Test Transaction",
+      "image": "https://your-logo-url.com/logo.png",
+      "handler": function (response){
+          alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
+          // You can send this ID to your server for verification
+      },
+      "prefill": {
+          "name": "Test User",
+          "email": "test@example.com",
+          "contact": "7305955939"
+      },
+      "method": {
+      "upi": true,       // Enable UPI
+      "card": false,     // Disable card if you want only UPI
+      "netbanking": false
+    },
+    "upi": {
+      "flow": "intent"  // 👈 This enables GPay and other UPI apps directly
+    },
+      "theme": {
+          "color": "#3399cc"
+      }
+    };
+  
+    var rzp = new Razorpay(options);
+    document.getElementById('rzp-button').onclick = function(e){
+      rzp.open();
+      e.preventDefault();
+    }
+  </script>
+  
 </body>
 </html>
