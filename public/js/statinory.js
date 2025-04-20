@@ -15,27 +15,7 @@ const products = [
       price: 120,
       image: "https://images.unsplash.com/photo-1585336261022-680e295ce3fe?ixlib=rb-4.0.3"
     },
-    {
-      id: 4,
-      name: "Pencil Set (12 Pack)",
-      description: "High quality HB pencils with erasers",
-      price: 90,
-      image: "js/image/pencil.jpg"
-    },
-    {
-      id: 5,
-      name: "Eraser (5 Pack)",
-      description: "Soft, non-abrasive erasers",
-      price: 40,
-      image: "js/image/1.jpg"
-    },
-    {
-      id: 6,
-      name: "Color Pencils (24 Pack)",
-      description: "Vibrant colors for creative work",
-      price: 350,
-      image: "js/image/color_pencil.jpg"
-    }
+    
   ];
   
   // Cart functionality
