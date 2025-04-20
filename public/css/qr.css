@@ -151,7 +151,7 @@ body {
 }
 
 /* Laptop/Desktop View (1024px and above) */
-@media (min-width: 1024px ) and (max-width: 2224px) {
+@media (min-width: 1024px ) {
   .container {
     width: 80%;
     max-width: 1200px;
@@ -169,6 +169,36 @@ body {
   
   .logo {
     height: 150px;
+    margin-top: 50px;
+    margin-right: 70px;
+  }
+  
+  .qr-img {
+    width: 280px;
+    height: 280px;
+  }
+}
+@media (max-width: 2224px) {
+  .container {
+    width: 80%;
+    max-width: 1200px;
+    padding: 30px;
+  }
+  
+  .qr-code {
+    width: 800px;
+    padding: 30px;
+    transition: transform 0.2s ease;
+  }
+  .qr-code:hover {
+    transform: scale(1.1);
+  }
+  
+  .logo {
+    height: 150px;
+    width: fit-content;
+    float: right;
+    
     margin-top: 50px;
     margin-right: 70px;
   }
