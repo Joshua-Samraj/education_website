@@ -63,6 +63,12 @@
 
     <section>
       <div class="wrapper">
+        <a href="https://rzp.io/rzp/7IK8wCU" 
+        target="_blank" 
+        class="stationary-btn" >
+        Donate Stationery
+     </a>
+     
         <h2>Students in Need</h2>
         <div class="card-container" id="studentCards"></div>
       </div>
@@ -72,8 +78,9 @@
 
     <div class="statinory-container">
       <div class="wrapper">
-        <a href="statinory.html" class="donate-btn" style="background-color:#e61d3f; font-size: 0.9rem; text-align: center; width: 150px; height: 15px; margin-bottom: 10px;">Donate Stationery</a>
+        
         <a href="index.html" class="donate-btn" style="background-color:#e61d3f; font-size: 0.9rem; text-align: center; width: 150px; height: 15px; margin-bottom: 10px;">HOME</a>
+        
       </div>
     </div>
 
@@ -91,7 +98,8 @@
       location: "Reddiarpatti,Tirunelveli,Tamil Nadu", 
       need: "₹5,000 for books and tuition", 
       image: "image/manis kumar.png", 
-      detailPage: "Manish kumar.html" 
+      detailPage: "Manish kumar.html" ,
+      payment_link:"https://rzp.io/rzp/KlbNjlA4"
     },
 
 
@@ -101,7 +109,8 @@
       location: "Itteri Pudhu Kulam,Tirunelveli", 
       need: "₹8,000 for exam fees", 
       image: "image/subarna.png", 
-      detailPage: "Subarna.A.html" 
+      detailPage: "Subarna.A.html" ,
+      payment_link:"https://rzp.io/rzp/krU7w0uS"
     },
       { name: "G.Bramamuthu", 
       age: 15, 
@@ -109,7 +118,8 @@
       location: "Anavarathanallur,Thoothukkudi, Tamil Nadu", 
       need: "₹14,500 for Books,Uniform and Tuition", 
       image: "image/bramamuthu.png",
-      detailPage: "bramamuthu.html" 
+      detailPage: "bramamuthu.html" ,
+      payment_link:"https://rzp.io/rzp/X6huyd9Z"
     },
       { name: "R.Riona Lithesha", 
       age: 6, 
@@ -117,7 +127,8 @@
       location: "Tirunelveli, Tamil Nadu", 
       need: "₹22,850 for books and tuitions", 
       image: "image/girl.png", 
-      detailPage: "riona lithesha.html" 
+      detailPage: "riona lithesha.html",
+      payment_link:"https://rzp.io/rzp/SqerDit"
 
       },
       { name: "R.Varshini", 
@@ -126,7 +137,8 @@
       location: "Tirunelveli, Tamil Nadu", 
       need: "₹24,000 for exam fees", 
       image: "image/girl.png", 
-      detailPage: "Varshini.html" 
+      detailPage: "Varshini.html" ,
+      payment_link:"https://rzp.io/rzp/a2gVzfb1"
         
       },
       
@@ -151,7 +163,7 @@
           <p><strong>Class:</strong> ${student.grade}</p>
           <p><strong>Location:</strong> ${student.location}</p>
           <p><strong>Need:</strong> ${student.need}</p>
-          <a href="qr.html" class="donate-btn" id="donateTrigger">Donate</a>
+          <a href="${student.payment_link}"  target = "_blank" class="donate-btn" id="donateTrigger">Donate</a>
           
 
         `;
