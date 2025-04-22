@@ -125,7 +125,20 @@ button {
   color: #000;
 }
 
-
+.stationary-btn {
+  background-color: #e61d3f; 
+  font-size: 1.9rem; 
+  text-align: center; 
+  width: 280px; 
+  height: 65px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  color: white; 
+  text-decoration: none; 
+  border-radius: 8px;
+  margin-left: 850px;
+}
 .form-input:focus {
   border-color: #007bff;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
@@ -586,7 +599,20 @@ h1 {
     margin-top: 20px;
     float: none;
   }
-
+  .stationary-btn {
+    background-color: #e61d3f; 
+    font-size: 1.9rem; 
+    text-align: center; 
+    width: 280px; 
+    height: 65px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: white; 
+    text-decoration: none; 
+    border-radius: 8px;
+    margin-left: 60px;
+  }
   .student-card:hover {
     background: #285c68;
     color: #cdeb6b;
