@@ -158,7 +158,17 @@
       need: "21,000 for 1 year of study",
       image: "image/sandru_mugin.jpg", 
       detailPage: "Sandru Mugin.html",
-      payment_link:"https://rzp.io/rzp/a2gVzfb1"
+      payment_link:"https://rzp.io/rzp/w14o9lG"
+        
+      },
+      { name: "Saran Mari",
+      age: 20, 
+      grade: "BA in Tamil Literature",
+      location: "Paruthipadu,Tirunelveli", 
+      need: "21,000 for 1 year of study",
+      image: "image/saran_mari_2.jpg",
+      detailPage: "saran mari.html",
+      payment_link:"https://rzp.io/rzp/R6yGyX4"
         
       },
       
@@ -261,6 +271,41 @@
     // };
 
   </script>
+
+<script>
+  // Disable right-click
+  document.addEventListener('contextmenu', event => event.preventDefault());
+
+  // Prevent image dragging
+  document.querySelectorAll('img').forEach(img => {
+    img.setAttribute('draggable', 'false');
+    img.addEventListener('mousedown', e => e.preventDefault());
+  });
+
+  // Disable keyboard shortcuts for Save and View Source
+  document.addEventListener('keydown', function (e) {
+    // Ctrl+S or Cmd+S
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
+      e.preventDefault();
+    }
+
+    // Ctrl+U or Cmd+U
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'u') {
+      e.preventDefault();
+    }
+
+    // Ctrl+Shift+I or Cmd+Option+I (Dev tools)
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === 'i') {
+      e.preventDefault();
+    }
+
+    // F12 (Dev tools)
+    if (e.key === 'F12') {
+      e.preventDefault();
+    }
+  });
+</script>
+
   <!-- <script>
     var options = {
       "key": "rzp_test_sb4orrWDUFRrN2", // Replace with your Razorpay key_id
