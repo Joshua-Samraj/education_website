@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Riya Sharma - Student Details</title>
+  <link rel="stylesheet" href="css/student.css" />
+  <script src="js/student.js" defer></script>
+</head>
+<body>
+
+<header>
+  <h1>Student Details</h1>
+</header>
+
+<div class="container">
+  <h1>Riona Lithesha</h1>
+  
+  <div class="info">
+    <div class="student-header">
+      <img src="image/riona_lithsha.png" alt="bramamuthu" class="student-img" />
+      <h1 class="Serial_number">LHCTFS_004</h1>
+    </div>
+    
+    <p><strong>Age:</strong> 6</p>
+    <p><strong>Class:</strong> 2nd Grade</p>
+    <p><strong>School:</strong> Rani Modern School</p>
+    <p><strong>Location:</strong>  Eruvadi,Tirunelveli,Tamil Nadu, India</p>
+    <p><strong>Academic Performance:</strong> Scoring above 85% in all subjects</p>
+    <p class="donate-section"><strong>Family Background:</strong> Little Riona Lithesha. R is a 1st-grade student at Rani Modern School. She is a sweet and bright child with dreams as big as her heart. But behind her innocent smile lies a family struggling with hardship every single day.
+
+      Her father works as a daily wage laborer in a mosquito net manufacturing unit, doing all he can to make ends meet. Her mother is a housewife, and the family often finds it difficult to put even a basic meal on the table.
+      
+      They have faced many challenges in life and continue to struggle for even the most essential needs like food and school expenses. Despite it all, Riona continues to go to school with hope in her eyes.
+      
+      Your support can help bring stability to their life and give Riona the chance to grow, learn, and chase the future she deserves. Even a small contribution can make a big difference for this family. </p>
+    <h3 style="color: rgb(237, 250, 0);"><strong>Help Needed:</strong> ₹19,850 for Books, Tuition Fees, Stationery Kit, and School Uniform</h3>
+  </div>
+
+  <div class="donate-section">
+    <h2>Support Riona Lithesha's Education</h2>
+    <p>"Your donation can be the turning point in this student’s life."</p>
+    <a href="qr.html" target="_blank" class="donate-btn" >Donate Now</a>
+  </div>
+  
+  <a href="home.html" class="donate-btn">Back to Students</a>
+</div>
+
+<div id="qrModal">
+  <div class="qr-content">
+    <h2>Scan to Donate</h2>
+    <img src="image/qr.png" alt="QR Code" />
+    <br />
+    <button onclick="closeQR()">Close</button>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; Living Hope Charitable Future Sparks. All rights reserved.</p>
+</footer>
+
+<script>
+  const qrModal = document.getElementById("qrModal");
+  const donateTrigger = document.getElementById("donateTrigger");
+
+  donateTrigger.addEventListener("click", function (e) {
+    e.preventDefault();
+    qrModal.style.display = "flex";
+  });
+
+  function closeQR() {
+    qrModal.style.display = "none";
+  }
+</script>
+
+</body>
+</html>

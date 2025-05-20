@@ -1,0 +1,665 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fbfbfb9a;
+  color: #000000;
+}
+
+header {
+  background: linear-gradient(135deg, #013f4a, #035f74, #013f4a, #035f74);
+  color: #ffffff;
+  text-align: center;
+  padding: 10px
+  
+  
+  
+}
+
+/* Make header smaller on screens smaller than 600px */
+
+
+h1 {
+  text-shadow: #000000 1px 1px 1px;
+}
+.logo {
+  height:180px;
+  width:270px;
+  float: left;
+  margin-left: 30px;
+  margin-top: 5px;
+  box-shadow: #000000 0px 0px 1px;
+  border-radius: 10px;
+  
+}
+.logo-text {
+  margin-right: 20px;
+  
+}
+.wrapper {
+  padding: 0 20px; /* 30px space on left and right */
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* .logo {
+  height:200px;
+  width:250px;
+  float: left;
+} */
+.students {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+
+
+.student-card h3 {
+  margin-top: 0;
+}
+
+button {
+  background-color: #28a745;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.student-img {
+  height: 150px;
+  width: 150px;
+  border-radius: 20%;
+  float: right;
+  margin-right: 20px;
+  
+  
+}
+
+.verify-img {
+  height: 100px;
+  width: 125px;
+  border-radius: 20%;
+  float:right;
+  margin-right: 20px;
+  margin-top: 20px;
+  
+  
+}
+
+.password-container {
+  position: relative;
+  width: 100%;
+  max-width: 350px; /* You can adjust this */
+  margin: 0 auto;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 40px 10px 12px; /* Extra right padding for the icon */
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #666;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+  color: #000;
+}
+
+.stationary-btn {
+  background-color: #e61d3f; 
+  font-size: 1.9rem; 
+  text-align: center; 
+  width: 280px; 
+  height: 65px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  color: white; 
+  text-decoration: none; 
+  border-radius: 8px;
+  margin-left: 1080px;
+}
+.form-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+
+.spark-text {
+  color: #ff0000;
+  animation: thunderEffect 1.8s infinite;
+  text-shadow: 0 0 5px #ff0000;
+  font-size: 2.7rem;
+  margin-left: 15PX;
+}
+
+@keyframes thunderEffect {
+  0%, 5%, 10%, 100% {
+    text-shadow: 0 0 2px #fff, 0 0 10px #fbb034, 0 0 20px #ffdd00;
+    color: #fff8dc;
+  }
+  6%, 11% {
+    text-shadow: 0 0 0 transparent;
+    color: #ff9e00;
+  }
+  20%, 21%, 22% {
+    text-shadow: 0 0 15px #ffe600, 0 0 30px #ffffff;
+    color: #ffffff;
+  }
+  23%, 24% {
+    text-shadow: none;
+    color: #ff9e00;
+  }
+  50% {
+    text-shadow: 0 0 30px #fff, 0 0 60px #ffff33;
+    color: #ffffff;
+  }
+  51%, 52% {
+    text-shadow: none;
+    color: #ff9e00;
+  }
+}
+
+
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  perspective: 1000px;
+  font-size: 1.4rem;
+  
+}
+
+/* Two-column layout on larger screens */
+.student-card {
+  flex: 1 1 calc(50% - 1rem);
+  box-sizing: border-box;
+  color: #ffffff;
+  display: block;
+  text-decoration: none;
+  background: linear-gradient(135deg, #013f4a, #035f74, #013f4a, #035f74);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 50px rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s ease;
+}
+
+/* Full-width cards on smaller screens */
+@media (max-width: 410px) {
+  .student-card {
+    flex: 1 1 100%;
+  }
+
+  header {
+    background: linear-gradient(135deg, #013f4a, #035f74, #013f4a, #035f74);
+    color: #ffffff;
+    text-align: center;
+    padding: 10px
+    
+    
+  }
+  .logo {
+    height:100px;
+    width:150px;
+    float: left;
+    
+  }
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+footer {
+  text-align: center;
+  background-color: #343a40;
+  color: white;
+  padding: 1rem;
+}
+.student-card {
+  color: #ffffff;
+  display: block;
+  text-decoration: none;
+  width: auto;
+  background: linear-gradient(135deg, #013f4a, #035f74, #013f4a, #035f74);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 50px rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s ease;
+  transform-style: preserve-3d;
+}
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; /* behind your HTML */
+}
+.student-card:hover {
+  background: #285c68;
+  color: #cdeb6b;
+  box-shadow: #000000 0px 0px 10px;
+  
+
+  transform: rotateY(-5deg) scale(1.02); /* You can tweak the degrees */
+}
+
+/* ===============login modal================= */
+#mainContent.blurred {
+  filter: blur(5px);
+  pointer-events: none;
+  user-select: none;
+}
+.logout-btn {
+  float: right;
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  color: #000000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(12px); /* For Safari support */
+  margin: 10% auto;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  color: #fff; /* Optional: to ensure text contrasts well */
+  border-color: #ccc;
+}
+
+
+.modal-content input {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.info p {
+  
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.donate-section {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #e9f7ef;
+  border-left: 5px solid #28a745;
+  border-radius: 8px;
+}
+
+.donate-section h2 {
+  margin-top: 0;
+}
+
+.student-header {
+  text-align: center;
+  
+}
+
+.student-img {
+  height: 150px;
+  width: 150px;
+  border-radius: 20%;
+}
+
+.Serial_number {
+  font-size: 20px;
+  color: red;
+  margin-top: 0.5rem;
+}
+
+.donate-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: #28a745;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.donate-btn:hover {
+  background-color: #218838;
+  box-shadow: #000000 0px 0px 10px;
+}
+
+
+.scroll-text {
+  
+  width: 100%;
+  overflow: hidden;
+  background-color: #000000;
+  border-top: 2px solid #e61d3f;
+  border-bottom: 2px solid #e61d3f;
+  padding: 8px 0;
+  box-sizing: border-box;
+}
+
+.scroll-text p {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 20s linear infinite;
+  font-size: 1rem;
+  color: #f9f9f9;
+  padding-left: 100%;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+/* Existing CSS remains the same until the media queries */
+
+/* =============== Responsive Media Queries ================= */
+@media (max-width: 768px) {
+  .logo {
+    height: 150px;
+    width: 170px;
+    float: left;
+    border-radius: 10px;
+    
+    margin-left: 10px;
+  }
+  
+  header {
+
+    
+    padding: 15px 0;
+  }
+
+  .student-card:hover {
+    background: #285c68;
+    color: #cdeb6b;
+    box-shadow: #000000 0px 0px 10px;
+    
+  
+    
+  }
+  
+  .wrapper {
+    padding: 0 15px;
+  }
+  
+  .student-card {
+    flex: 1 1 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .student-img, .verify-img {
+    float: none;
+    display: block;
+    margin: 0 auto 15px;
+  }
+  
+  .modal-content {
+    margin: 20% auto;
+    width: 85%;
+  }
+  
+  .container {
+    margin: 1rem auto;
+    padding: 1rem;
+  }
+  
+  .info p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 70px;
+    width: 110px;
+    float: left;
+    margin-right: 10px;
+  }
+  .student-card:hover {
+    background: #285c68;
+    color: #cdeb6b;
+    box-shadow: #000000 0px 0px 10px;
+    
+  
+   
+  }
+  
+  
+  
+  h1 {
+    font-size: 1.5rem;
+    margin-top: 130px;
+  }
+  
+  .students {
+    padding: 1rem;
+  }
+  
+  .student-img {
+    height: 120px;
+    width: 120px;
+  }
+  
+  .verify-img {
+    height: 20px;
+    width: 70px;
+  }
+  
+  .scroll-text p {
+    font-size: 0.9rem;
+    animation: scroll-left 15s linear infinite;
+  }
+  
+  .modal-content {
+    padding: 1.5rem;
+  }
+  
+  .donate-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .Serial_number {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 320px) {
+  .logo {
+    height: 50px;
+    width: 100px;
+    margin-right: 10px;
+  }
+  .student-card:hover {
+    background: #285c68;
+    color: #cdeb6b;
+    box-shadow: #000000 0px 0px 10px;
+    
+  
+   
+  }
+  header {
+    padding: 9px 0;
+    
+  }
+
+  h1 {
+    margin-top: 72px;
+  }
+  
+  .student-card {
+    padding: 0.8rem;
+  }
+
+  }
+  .scroll-text {
+    padding: 5px 0;
+  }
+  
+  .scroll-text p {
+    font-size: 0.8rem;
+  }
+  
+  .modal-content {
+    margin: 25% auto;
+    padding: 1rem;
+  }
+
+
+
+
+
+@media (max-width: 800px) {
+  .logo {
+    height: 80px;
+    width: 110px;
+    margin-right: 80px;
+    margin-left: 80px;
+    margin-top: 20px;
+    float: none;
+  }
+  .stationary-btn {
+    background-color: #e61d3f; 
+    font-size: 1.9rem; 
+    text-align: center; 
+    width: 280px; 
+    height: 65px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: white; 
+    text-decoration: none; 
+    border-radius: 8px;
+    margin-left: 60px;
+  }
+  .student-card:hover {
+    background: #285c68;
+    color: #cdeb6b;
+    box-shadow: #000000 0px 0px 10px;
+    
+  
+   
+  }
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    perspective: 1000px;
+    text-align: center;
+  }
+  header {
+    padding: 9px 0;
+    
+  }
+
+  h1 {
+    margin-top: 10px;
+  }
+  .donate-btn {
+    height: 30px;
+    width: 60px;
+    padding: 0.5rem 1rem;
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  
+  .student-card {
+    padding: 0.8rem;
+  }
+  
+  .scroll-text {
+    padding: 5px 0;
+  }
+  
+  .scroll-text p {
+    font-size: 0.8rem;
+  }
+  
+  .modal-content {
+    margin: 25% auto;
+    padding: 1rem;
+  }
+}
+/* Existing remaining CSS stays the same */

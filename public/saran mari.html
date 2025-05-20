@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A.Manish Kumar - Student Details</title>
+  <meta property="og:title" content="A.Manish Kumar details | Future Sparks by Living Hope Trust">
+  <meta property="og:description" content="Donate and help students achieve their dreams. Every contribution counts.">
+  <meta property="og:image" content="https://media-hosting.imagekit.io/3a43847df98b4254/manis%20kumar.png?Expires=1839775501&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=a1TFaU6l8XvWow~LrFh52sFqfCdiF9KoSEstqEX-yxuPUjk5-bPDHmskU5LhnvlGkptav6l1pMuhJeTYk7r44rL6ssmxONq~mvAoDOHrxlQXY3LQt86e-NGf5yvB~lLO3OPa7CSZwFlRxsiQSyPiTLs0V8PJM66xOk8JXqM2AtQkzu1PqvTBU3oEEI0yOPMsmGETwNIzdonQPo8VvvU6zpKX8L1rVRZmOGcCxHOBnUFS72WCUHydaoGudtVxCdTbHixjjpPTDSGMiBmspWnKSpZsJ-WAZiIU-0Io19-j5ebZixZUrd-9-Xv-dsrJBitSKKD-V-f6Z9sKv6~iC2~znw__">
+  <meta property="og:url" content="https://living-hope-charitable-education-website-liart.vercel.app/saran%mari.html">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/student.css" />
+  <script src="js/student.js" defer></script>
+</head>
+<body>
+
+<header>
+  <h1>Student Details</h1>
+  <button onclick="triggerTranslate()" class="donate-btn translate-btn">Translate to Tamil</button>
+</header>
+
+<div id="google_translate_element"></div>
+
+<!-- Google Translate Script -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      { 
+        pageLanguage: 'en',
+        includedLanguages: 'en,ta',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 
+      'google_translate_element'
+    );
+  }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<div class="container">
+  <h1>Saran Mari</h1>
+
+  <div class="info">
+    <div class="student-header">
+      <img src="image/saran_mari_2.jpg" alt="joshua" class="student-img" />
+      <h1 class="Serial_number">LHCTFS_007</h1>
+    </div>
+
+    <p><strong>Age:</strong>20</p>
+    <p><strong>Class:</strong> BA in Tamil Literature</p>
+    <p><strong>School:</strong>Xavier's College Tirunelveli</p>
+    <p><strong>Location:</strong>Paruthipadu,Tirunelveli</p>
+    <!-- <p><strong>Academic Performance:</strong> Scoring above 85% in all subjects</p> -->
+    <p class="donate-section">
+      <strong>Family Background:</strong> Saran Mari lost both his parents when he was just a child. Left behind with two younger siblings, their world turned upside down overnight. Their kind-hearted aunt took them in, despite facing immense hardships herself. Every day is a battle—for food, for school, for survival.
+
+      Their lives are filled with silent struggles and unspoken dreams. But with your support, we can bring light into their darkness. Your kindness can help Saran continue his education and give this brave family a chance at a better tomorrow.
+      
+      
+    </p>
+    <h3 style="color: rgb(237, 250, 0); background-color: #2c3e50; padding: 10px; border-radius: 5px;">
+      <strong>Help Needed:</strong> 21,000 for 1 year of study
+    </h3>
+  </div>
+
+  <div class="donate-section">
+    <h2>Support Saran Mari's Education</h2>
+    <p>"Your donation can be the turning point in this student’s life."</p>
+    <a href="qr.html" target="_blank" class="donate-btn" >Donate Now</a>
+  </div>
+
+  <a href="home.html" class="donate-btn">Back to Students</a>
+</div>
+
+<div id="qrModal">
+  <div class="qr-content">
+    <h2>Scan to Donate</h2>
+    <img src="image/qr.png" alt="QR Code" />
+    <br />
+    <button onclick="closeQR()" class="donate-btn">Close</button>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; Living Hope Charitable Future Sparks. All rights reserved.</p>
+</footer>
+
+<!-- Google Translate Element -->
+<div id="google_translate_element"></div>
+
+<!-- Google Translate Script -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      { 
+        pageLanguage: 'en',
+        includedLanguages: 'en,ta',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 
+      'google_translate_element'
+    );
+    
+    // Hide the Google Translate branding
+    var style = document.createElement('style');
+    style.textContent = '.goog-te-banner-frame { display: none !important; }';
+    document.head.appendChild(style);
+  }
+</script>
+<!-- <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
+
+</body>
+</html>

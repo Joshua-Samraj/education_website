@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Riya Sharma - Student Details</title>
+  <link rel="stylesheet" href="css/student.css">
+  <script src="js/student.js" defer></script>
+
+</head>
+<body>
+
+<header>
+  <h1>Educational Donation Fund</h1>
+</header>
+
+<div class="container">
+  <h1>A.Subarna</h1>
+  
+  <div class="info">
+    <div class="student-header">
+      <img src="image/subarna.png" alt="Joshua" class="student-img">
+      <h1 class="Serial_number">LHCTFS_002</h1>
+    </div>
+    
+    <p><strong>Age:</strong> 15</p>
+    <p><strong>Class:</strong> 11th Grade</p>
+    <p><strong>School:</strong> SARAH TUCKER HR.SEC.SCHOOL</p>
+    <p><strong>Location:</strong> ITTERI PUDHU KULAM TIRUNELVELI</p>
+    <p class="donate-section"><strong>Family Background:</strong> Subarna comes from a very humble background. Her father is physically handicapped — he lost the use of his right leg due to a tragic accident and is unable to work. Her mother is a homemaker and has no source of income. The family has been struggling to make ends meet with no stable financial support. Despite these hardships, Subarna remains determined to pursue her education and dreams of building a better future for her family. Your support can make a real difference in her life.</p>
+    <p><strong>Academic Performance:</strong> Scoring above 92% in all subjects</p>
+    <h3 style="color: rgb(237, 250, 0); background-color: #2c3e50; padding: 10px; border-radius: 5px;">
+      <strong>Help Needed:</strong> ₹14,500 for Books, Tuition Fees, Stationery Kit, and School Uniform
+    </h3>
+  </div>
+
+  <div class="donate-section">
+    <h2>Support Subarna's Education</h2>
+    <p>"Your donation can be the turning point in this student’s life."</p>
+    <a href="qr.html" target="_blank" class="donate-btn">Donate Now</a>
+  </div>
+  <a href="home.html" class="donate-btn">Back to Students</a>
+</div>
+
+<footer>
+  <p>&copy; 2025 Educational Donation Fund. All rights reserved.</p>
+</footer>
+
+<div id="qrModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:1000;">
+  <div style="background:white; padding:2rem; border-radius:10px; position:relative; text-align:center; max-width:90%; width:300px;">
+    <h2 style="margin-top:0;">Scan to Donate</h2>
+    <img src="image/qr.png" alt="QR Code" style="width:200px; height:auto;">
+    <br>
+    <button onclick="closeQR()" style="margin-top:1rem; padding:0.5rem 1rem; background-color:#013f4a; color:white; border:none; border-radius:5px; cursor:pointer;">Close</button>
+  </div>
+</div>
+
+<script>
+  const qrModal = document.getElementById("qrModal");
+  const donateBtn = document.querySelector(".donate-btn_");
+
+  donateBtn.addEventListener("click", function(e) {
+    e.preventDefault(); // prevent link behavior
+    qrModal.style.display = "flex";
+  });
+
+  function closeQR() {
+    qrModal.style.display = "none";
+  }
+</script>
+
+</body>
+</html>

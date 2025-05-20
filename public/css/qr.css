@@ -1,0 +1,181 @@
+/* Reset & Base Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #0e0e0e;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Container */
+.container {
+  width: 95%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: black;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* Title & Description */
+.donation-title {
+  font-size: 1.8rem;
+  color: #e61d3f;
+  margin-bottom: 10px;
+}
+
+.donation-description {
+  font-size: 1.1rem;
+  color: #f0f0f0;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* QR Section */
+.qr-code {
+  background-color: #e0f8f5;
+  color: #445a67;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px #fff;
+}
+
+.qr-code h1,
+.qr-code h2,
+.qr-code h3 {
+  color: #2c3e50;
+  margin: 10px 0;
+  font-weight: 500;
+}
+
+.qr-code strong {
+  color: #34495e;
+}
+
+/* QR Image */
+.qr-img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 10px auto;
+}
+
+/* Logo */
+.logo {
+  width: 140px;
+  height: auto;
+  margin: 20px auto 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+  display: block;
+}
+
+/* Donate Button */
+.donate-btn {
+  display: inline-block;
+  background-color: #e61d3f;
+  color: white;
+  padding: 0.7rem 1.4rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.donate-btn:hover {
+  background-color: #218838;
+  box-shadow: 0 0 10px #000;
+}
+
+/* Instructions */
+.instructions {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+/* Melting Lines Animation */
+.melting-lines {
+  margin-top: 20px;
+  position: relative;
+  height: 80px;
+}
+
+.line {
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  background-color: #e61d3f;
+  animation: melt 2s infinite ease-in-out;
+}
+
+.line:nth-child(1) { top: 15px; animation-delay: 0s; }
+.line:nth-child(2) { top: 30px; animation-delay: 0.3s; }
+.line:nth-child(3) { top: 45px; animation-delay: 0.6s; }
+.line:nth-child(4) { top: 60px; animation-delay: 0.9s; }
+
+@keyframes melt {
+  0%   { transform: scaleX(1); opacity: 1; }
+  50%  { transform: scaleX(0.6); opacity: 0.6; }
+  100% { transform: scaleX(1.2); opacity: 0; }
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .container {
+    padding: 25px;
+  }
+
+  .qr-img {
+    max-width: 250px;
+  }
+
+  .donation-title {
+    font-size: 2rem;
+  }
+
+  .donation-description {
+    font-size: 1.2rem;
+  }
+
+  .logo {
+    width: 160px;
+  }
+}
+
+/* Desktop and up */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 800px;
+    padding: 30px;
+  }
+
+  .qr-img {
+    max-width: 280px;
+  }
+
+  .logo {
+    float: right;
+    margin: 0 0 0 20px;
+    height: 130px;
+  }
+
+  .qr-code {
+    padding: 30px;
+  }
+
+  .qr-code:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+  }
+}
