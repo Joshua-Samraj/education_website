@@ -50,7 +50,7 @@
         <strong class="spark-text">FUTURE SPARKS</strong>
 
       <p>Join the 2025 Educational Fundraising | Empower a Child's Future</p>
-      <p>Help students achieve their dreams through your donations</p>
+      <p>Help students to achieve their dreams through your donations</p>
       <a href="tel:9500561937" class="donate-btn" style="background-color:#e7681b; font-size: 0.9rem; text-align: center; width: 100px; height: 20px;">CONTACT US</a>
 
     </div>
@@ -96,7 +96,8 @@
       age: 13,
        grade: "8th Grade", 
       location: "Reddiarpatti,Tirunelveli,Tamil Nadu", 
-      need: "₹5,000 for books and tuition", 
+      need: "₹5,000 ", 
+      details:"Books,Bag,Notes,Stationery Kit,Tuition Fees",
       image: "image/manis kumar.png", 
       detailPage: "Manish kumar.html" ,
       payment_link:"https://rzp.io/rzp/KlbNjlA4"
@@ -107,17 +108,19 @@
       age: 15, 
       grade: "11th Grade", 
       location: "Itteri Pudhu Kulam,Tirunelveli", 
-      need: "₹14,500 for exam fees", 
+      need: "₹14,500", 
       image: "image/subarna.png", 
       detailPage: "Subarna.A.html" ,
+      details:"School Fees,Uniform,Bag",
       payment_link:"https://rzp.io/rzp/krU7w0uS"
     },
       { name: "G.Bramamuthu", 
       age: 15, 
       grade: "12th Grade", 
       location: "Anavarathanallur,Thoothukkudi, Tamil Nadu", 
-      need: "₹14,500 for Books,Uniform and Tuition", 
+      need: "₹14,500", 
       image: "image/bramamuthu.png",
+      details:"Books,Uniform,Tuition Fees,Bag",
       detailPage: "bramamuthu.html" ,
       payment_link:"https://rzp.io/rzp/X6huyd9Z"
     },
@@ -125,8 +128,9 @@
       age: 6, 
       grade: "2nd Grade", 
       location: "Eruvadi,Tirunelveli,Tamil Nadu",
-      need: "₹19,850 for books and tuitions", 
+      need: "₹19,850", 
       image: "image/riona_lithsha.png",
+      details:"Books,Uniform,Bag",
       detailPage: "riona lithesha.html",
       payment_link:"https://rzp.io/rzp/SqerDit"
 
@@ -135,7 +139,8 @@
       age: 11, 
       grade: "6th Grade", 
       location: "Eruvadi,Tirunelveli,Tamil Nadu", 
-      need: "₹24,500 for exam fees", 
+      need: "₹24,500", 
+      details:"Books,Stationery Kit,Uniform,Bag",
       image: "image/varshini.png",
       detailPage: "Varshini.html" ,
       payment_link:"https://rzp.io/rzp/a2gVzfb1"
@@ -147,6 +152,7 @@
       location: "Tirunelveli, Tamil Nadu", 
       need: "₹1,07,000+4000 (Exam Fees) = 1,11,000",
       image: "image/boy.png", 
+      details:"1 year of study",
       detailPage: "joshua.html" ,
       payment_link:"https://rzp.io/rzp/9bpFu0w"
         
@@ -155,7 +161,8 @@
       age: 20, 
       grade: "BA in Tamil Literature",
       location: "Tirunelveli, Tamil Nadu", 
-      need: "21,000 for 1 year of study",
+      need: "21,000 ",
+      details:"1 year of study",
       image: "image/sandru_mugin.jpg", 
       detailPage: "Sandru Mugin.html",
       payment_link:"https://rzp.io/rzp/w14o9lG"
@@ -165,7 +172,8 @@
       age: 20, 
       grade: "BA in Tamil Literature",
       location: "Paruthipadu,Tirunelveli", 
-      need: "21,000 for 1 year of study",
+      need: "21,000",
+      details:"1 year of study",
       image: "image/saran_mari_2.jpg",
       detailPage: "saran mari.html",
       payment_link:"https://rzp.io/rzp/R6yGyX4"
@@ -175,7 +183,8 @@
       age: 4, 
       grade: "LKG",
       location: "Sankarankovil , Tenkasi",
-      need: "26,000 for Books,Bag,Uniform,school fees",
+      need: "26,000 ",
+      details:"Books,Bag,Uniform,school fees,Van Fees", 
       image: "image/sathya.png",
       detailPage: "sathya.html",
       payment_link:"https://rzp.io/rzp/R6yGyX4"
@@ -201,7 +210,9 @@
           <p><strong>Age:</strong> ${student.age}</p>
           <p><strong>Class:</strong> ${student.grade}</p>
           <p><strong>Location:</strong> ${student.location}</p>
-          <p><strong>Need:</strong> ${student.need}</p>
+          <p><strong class="spark-text" style="color:white; font-size: 2rem;">Need:${student.need}</strong> </p>
+
+          <p><strong ></strong> (${student.details})</p>
           <a href="qr.html"  target = "_blank" class="donate-btn" id="donateTrigger">Donate</a>
           
 
