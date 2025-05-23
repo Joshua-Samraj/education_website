@@ -599,7 +599,7 @@ h1 {
     margin-top: 20px;
     float: none;
   }
-  .stationary-btn {
+.stationary-btn {
     background-color: #e61d3f; 
     font-size: 1.9rem; 
     text-align: center; 
@@ -612,7 +612,7 @@ h1 {
     text-decoration: none; 
     border-radius: 8px;
     margin-left: 60px;
-  }
+}
   .student-card:hover {
     background: #285c68;
     color: #cdeb6b;
