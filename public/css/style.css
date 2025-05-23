@@ -137,8 +137,9 @@ button {
   color: white; 
   text-decoration: none; 
   border-radius: 8px;
-  margin-left: 1080px;
+  margin: 0 auto; /* This centers the button horizontally */
 }
+
 .form-input:focus {
   border-color: #007bff;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
@@ -600,19 +601,20 @@ h1 {
     float: none;
   }
 .stationary-btn {
-    background-color: #e61d3f; 
-    font-size: 1.9rem; 
-    text-align: center; 
-    width: 280px; 
-    height: 65px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    color: white; 
-    text-decoration: none; 
-    border-radius: 8px;
-    margin-left: 60px;
+  background-color: #e61d3f; 
+  font-size: 1.9rem; 
+  text-align: center; 
+  width: 280px; 
+  height: 65px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  color: white; 
+  text-decoration: none; 
+  border-radius: 8px;
+  margin: 0 auto; /* This centers the button horizontally */
 }
+
   .student-card:hover {
     background: #285c68;
     color: #cdeb6b;
