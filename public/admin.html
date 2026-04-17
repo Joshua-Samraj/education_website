@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Living Hope Charitable Trust</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 min-h-screen text-gray-800 font-sans">
+
+    <div class="max-w-7xl mx-auto p-6">
+        
+        <header class="flex justify-between items-center mb-8 pb-4 border-b-2 border-gray-200">
+            <div>
+                <h1 class="text-3xl font-extrabold text-gray-900">Admin Dashboard</h1>
+                <p class="text-gray-500">Manage student profiles and donation links</p>
+            </div>
+            <a href="index.html" class="bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-2 rounded-lg font-medium transition duration-200 flex items-center">
+                <i class="fa-solid fa-arrow-left mr-2"></i> Back to Website
+            </a>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-xl shadow-md p-6 sticky top-6">
+                    <h2 id="formTitle" class="text-xl font-bold mb-6 text-gray-800 flex items-center border-b pb-2">
+                        <i class="fa-solid fa-user-plus mr-3 text-blue-600"></i> Add New Student
+                    </h2>
+                    
+                    <form id="addStudentForm" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Student ID (Auto-generated)</label>
+                            <input type="text" id="studentId" readonly class="w-full border border-gray-300 rounded-lg px-3 py-2 bg-gray-100 font-mono text-gray-600 focus:outline-none">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                            <input type="text" id="name" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Age *</label>
+                                <input type="number" id="age" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Gender *</label>
+                                <select id="gender" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+                                    <option value="" disabled selected>Select</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Grade / Class *</label>
+                            <input type="text" id="grade" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">School / Institution *</label>
+                            <input type="text" id="school" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Location *</label>
+                            <input type="text" id="location" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Academic Performance</label>
+                            <input type="text" id="performance" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Family Background *</label>
+                            <textarea id="background" rows="3" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Fund Need *</label>
+                            <input type="text" id="need" placeholder="e.g., ₹5,000" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Need Details *</label>
+                            <input type="text" id="details" placeholder="e.g., Books, Tuition, Uniform" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Student Photo</label>
+                            <div class="flex items-center justify-center w-full">
+                                <label class="flex flex-col items-center justify-center w-full h-24 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
+                                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                        <i class="fa-solid fa-cloud-arrow-up text-gray-400 mb-2"></i>
+                                        <p class="text-xs text-gray-500"><span class="font-semibold">Click to upload</span> image</p>
+                                    </div>
+                                    <input type="file" id="imageInput" accept="image/*" class="hidden" required />
+                                </label>
+                            </div>
+                            <p id="fileNameDisplay" class="text-xs text-green-600 mt-1 hidden"></p>
+                        </div>
+
+                        <div class="flex flex-col gap-2 mt-4">
+                            <button type="submit" id="submitBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-200 flex justify-center items-center">
+                                <span>Add Student</span>
+                            </button>
+                            <button type="button" id="cancelEditBtn" onclick="cancelEdit()" class="hidden w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-3 px-4 rounded-lg transition duration-200">
+                                Cancel Edit
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div id="notification" class="mt-4 p-3 rounded-lg hidden text-sm font-medium"></div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <div class="flex justify-between items-center mb-6 border-b pb-2">
+                        <h2 class="text-xl font-bold text-gray-800 flex items-center">
+                            <i class="fa-solid fa-users mr-3 text-blue-600"></i> Current Students
+                        </h2>
+                        <button onclick="fetchStudents()" class="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center">
+                            <i class="fa-solid fa-rotate-right mr-1"></i> Refresh List
+                        </button>
+                    </div>
+
+                    <div id="loadingIndicator" class="text-center py-8 hidden">
+                        <i class="fa-solid fa-circle-notch fa-spin text-3xl text-blue-600 mb-2"></i>
+                        <p class="text-gray-500">Loading student data...</p>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-gray-50 text-gray-600 text-sm uppercase tracking-wider">
+                                    <th class="p-3 border-b rounded-tl-lg">Photo</th>
+                                    <th class="p-3 border-b">ID & Name</th>
+                                    <th class="p-3 border-b">Details</th>
+                                    <th class="p-3 border-b">Fund Need</th>
+                                    <th class="p-3 border-b rounded-tr-lg">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="studentTableBody">
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:5000/api/students';
+        let globalStudentsData = [];
+        let isEditing = false;
+
+        const addStudentForm = document.getElementById('addStudentForm');
+        const imageInput = document.getElementById('imageInput');
+        const fileNameDisplay = document.getElementById('fileNameDisplay');
+        const studentTableBody = document.getElementById('studentTableBody');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        const notification = document.getElementById('notification');
+        const submitBtn = document.getElementById('submitBtn');
+        const cancelEditBtn = document.getElementById('cancelEditBtn');
+        const formTitle = document.getElementById('formTitle');
+
+        // File name display logic
+        imageInput.addEventListener('change', function() {
+            if (this.files && this.files[0]) {
+                fileNameDisplay.textContent = `Selected: ${this.files[0].name}`;
+                fileNameDisplay.classList.remove('hidden', 'text-orange-500');
+                fileNameDisplay.classList.add('text-green-600');
+            } else {
+                fileNameDisplay.classList.add('hidden');
+            }
+        });
+
+        // Notification logic
+        function showNotification(message, isSuccess) {
+            notification.textContent = message;
+            notification.classList.remove('hidden', 'bg-green-100', 'text-green-800', 'bg-red-100', 'text-red-800');
+            if (isSuccess) notification.classList.add('bg-green-100', 'text-green-800');
+            else notification.classList.add('bg-red-100', 'text-red-800');
+            setTimeout(() => notification.classList.add('hidden'), 5000);
+        }
+
+        // Generate Next ID
+        function generateNextId(students) {
+            if (!students || students.length === 0) return "LHCTFS_001";
+            let maxNum = 0;
+            students.forEach(s => {
+                const match = s.id.match(/LHCTFS_(\d+)/);
+                if (match) {
+                    const num = parseInt(match[1], 10);
+                    if (num > maxNum) maxNum = num;
+                }
+            });
+            return `LHCTFS_${String(maxNum + 1).padStart(3, '0')}`;
+        }
+
+        // Fetch Students
+        async function fetchStudents() {
+            loadingIndicator.classList.remove('hidden');
+            studentTableBody.innerHTML = '';
+
+            try {
+                const response = await fetch(API_URL);
+                if (!response.ok) throw new Error('Failed to fetch data');
+                
+                globalStudentsData = await response.json();
+                renderStudentTable(globalStudentsData);
+                
+                if (!isEditing) {
+                    document.getElementById('studentId').value = generateNextId(globalStudentsData);
+                }
+            } catch (error) {
+                console.error(error);
+                studentTableBody.innerHTML = `<tr><td colSpan="5" class="text-center p-6 text-red-500">Failed to load. Is backend running?</td></tr>`;
+            } finally {
+                loadingIndicator.classList.add('hidden');
+            }
+        }
+
+        // Render Table
+        function renderStudentTable(students) {
+            if (students.length === 0) {
+                studentTableBody.innerHTML = `<tr><td colSpan="5" class="text-center p-6 text-gray-500">No students found.</td></tr>`;
+                return;
+            }
+
+            [...students].reverse().forEach(student => {
+                const row = document.createElement('tr');
+                const rowClass = student.status === 'inactive' ? 'bg-gray-100 opacity-60' : 'hover:bg-gray-50';
+                row.className = `${rowClass} transition duration-150 border-b border-gray-100`;
+                
+                const imageUrl = `http://localhost:5000/${student.image}`;
+
+                const statusBadge = student.status === 'inactive' 
+                    ? `<span class="px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-red-700 bg-red-200 rounded-full ml-2">Inactive</span>`
+                    : `<span class="px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-green-700 bg-green-200 rounded-full ml-2">Active</span>`;
+
+                const toggleBtn = student.status === 'inactive'
+                    ? `<button onclick="toggleStatus('${student.id}', 'active')" class="bg-green-100 text-green-600 px-3 py-1 rounded hover:bg-green-200 transition text-sm w-full font-semibold"><i class="fa-solid fa-eye text-xs"></i> Show</button>`
+                    : `<button onclick="toggleStatus('${student.id}', 'inactive')" class="bg-red-100 text-red-600 px-3 py-1 rounded hover:bg-red-200 transition text-sm w-full font-semibold"><i class="fa-solid fa-eye-slash text-xs"></i> Hide</button>`;
+
+                row.innerHTML = `
+                    <td class="p-3 align-top">
+                        <img src="${imageUrl}" onerror="this.src='https://via.placeholder.com/150?text=No+Image'" class="w-16 h-16 object-cover rounded-lg shadow-sm border border-gray-200" />
+                    </td>
+                    <td class="p-3 align-top">
+                        <div class="font-bold text-gray-900 flex items-center">${student.name} ${statusBadge}</div>
+                        <div class="text-xs font-mono text-blue-600 bg-blue-50 inline-block px-2 py-1 rounded mt-1">${student.id}</div>
+                    </td>
+                    <td class="p-3 align-top">
+                        <div class="text-sm text-gray-700"><span class="font-semibold">Age:</span> ${student.age} | ${student.gender}</div>
+                        <div class="text-sm text-gray-700"><span class="font-semibold">Grade:</span> ${student.grade}</div>
+                    </td>
+                    <td class="p-3 align-top">
+                        <div class="font-bold text-green-600 text-lg">${student.need}</div>
+                    </td>
+                    <td class="p-3 align-top text-center space-y-2">
+                        <button onclick="editStudent('${student.id}')" class="bg-blue-100 text-blue-600 px-3 py-1 rounded hover:bg-blue-200 transition text-sm w-full font-semibold">
+                            <i class="fa-solid fa-pen text-xs"></i> Edit
+                        </button>
+                        ${toggleBtn}
+                    </td>
+                `;
+                studentTableBody.appendChild(row);
+            });
+        }
+
+        // Toggle Status (Soft Delete)
+        window.toggleStatus = async function(id, newStatus) {
+            const actionText = newStatus === 'inactive' ? 'hide' : 'show';
+            if (!confirm(`Are you sure you want to ${actionText} student ${id} on the public page?`)) return;
+
+            try {
+                const response = await fetch(`${API_URL}/${id}/status`, {
+                    method: 'PATCH',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ status: newStatus })
+                });
+
+                if (!response.ok) throw new Error('Failed to update status');
+                showNotification(`Student marked as ${newStatus}!`, true);
+                fetchStudents(); 
+            } catch (error) {
+                console.error("Status update error:", error);
+                showNotification('Failed to update student status.', false);
+            }
+        };
+
+        // Enter Edit Mode
+        window.editStudent = function(id) {
+            const student = globalStudentsData.find(s => s.id === id);
+            if (!student) return;
+
+            isEditing = true;
+            document.getElementById('studentId').value = student.id;
+            document.getElementById('name').value = student.name;
+            document.getElementById('age').value = student.age;
+            document.getElementById('gender').value = student.gender;
+            document.getElementById('grade').value = student.grade;
+            document.getElementById('school').value = student.school;
+            document.getElementById('location').value = student.location;
+            document.getElementById('performance').value = student.performance;
+            document.getElementById('background').value = student.background;
+            document.getElementById('need').value = student.need;
+            document.getElementById('details').value = student.details;
+            // document.getElementById('payment_link').value = student.payment_link;
+
+            imageInput.required = false;
+            fileNameDisplay.textContent = "Leave empty to keep current image";
+            fileNameDisplay.classList.remove('hidden', 'text-green-600');
+            fileNameDisplay.classList.add('text-orange-500');
+
+            formTitle.innerHTML = '<i class="fa-solid fa-user-pen mr-3 text-orange-500"></i> Edit Student';
+            submitBtn.innerHTML = '<span>Update Student</span>';
+            submitBtn.classList.replace('bg-blue-600', 'bg-orange-500');
+            submitBtn.classList.replace('hover:bg-blue-700', 'hover:bg-orange-600');
+            cancelEditBtn.classList.remove('hidden');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        // Cancel Edit
+        window.cancelEdit = function() {
+            isEditing = false;
+            addStudentForm.reset();
+            document.getElementById('studentId').value = generateNextId(globalStudentsData);
+            imageInput.required = true;
+            fileNameDisplay.classList.add('hidden');
+            
+            formTitle.innerHTML = '<i class="fa-solid fa-user-plus mr-3 text-blue-600"></i> Add New Student';
+            submitBtn.innerHTML = '<span>Add Student</span>';
+            submitBtn.classList.replace('bg-orange-500', 'bg-blue-600');
+            submitBtn.classList.replace('hover:bg-orange-600', 'hover:bg-blue-700');
+            cancelEditBtn.classList.add('hidden');
+        };
+
+        // Submit Form
+        addStudentForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> Saving...';
+            submitBtn.disabled = true;
+
+            try {
+                const formData = new FormData();
+                const studentId = document.getElementById('studentId').value;
+                
+                formData.append('id', studentId);
+                formData.append('name', document.getElementById('name').value);
+                formData.append('age', document.getElementById('age').value);
+                formData.append('gender', document.getElementById('gender').value);
+                formData.append('grade', document.getElementById('grade').value);
+                formData.append('school', document.getElementById('school').value);
+                formData.append('location', document.getElementById('location').value);
+                formData.append('performance', document.getElementById('performance').value);
+                formData.append('background', document.getElementById('background').value);
+                formData.append('need', document.getElementById('need').value);
+                formData.append('details', document.getElementById('details').value);
+                // formData.append('payment_link', document.getElementById('payment_link').value);
+                
+                const imageFile = imageInput.files[0];
+                if (imageFile) {
+                    formData.append('image', imageFile);
+                } else if (!isEditing) {
+                    throw new Error("Please select an image");
+                }
+
+                const method = isEditing ? 'PUT' : 'POST';
+                const endpoint = isEditing ? `${API_URL}/${studentId}` : API_URL;
+
+                const response = await fetch(endpoint, {
+                    method: method,
+                    body: formData
+                });
+
+                if (!response.ok) throw new Error(`Server returned ${response.status}`);
+
+                showNotification(isEditing ? 'Student updated successfully!' : 'Student added successfully!', true);
+                
+                cancelEdit(); 
+                fetchStudents(); 
+
+            } catch (error) {
+                console.error("Submission error:", error);
+                showNotification('Failed to save student. Check console.', false);
+            } finally {
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        window.onload = fetchStudents;
+    </script>
+</body>
+</html>
