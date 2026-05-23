@@ -36,29 +36,23 @@
 
   <script>
     async function fetchStudentData() {
-  try {
-    // Make sure this URL points to your Node.js backend when deployed
-    const response = await fetch('http://localhost:5000/api/students');
-    
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
+      try {
+        const response = await fetch('data/student.json');
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        
+        const allStudents = await response.json();
+        const activeStudents = allStudents.filter(student => student.status !== 'inactive');
+        generateStudentCards(activeStudents);
+
+      } catch (error) {
+        console.error('Error fetching student data:', error);
+        document.getElementById("studentCards").innerHTML = '<p style="text-align: center; color: red;">Failed to load student data. Please try again later.</p>';
+      }
     }
     
-    const allStudents = await response.json();
-    
-    // IMPORTANT: Filter out the inactive students
-    const activeStudents = allStudents.filter(student => student.status !== 'inactive');
-    
-    // Pass only the active students to your render function
-    generateStudentCards(activeStudents);
-
-  } catch (error) {
-    console.error('Error fetching student data:', error);
-    document.getElementById("studentCards").innerHTML = '<p style="text-align: center; color: red;">Failed to load student data. Please try again later.</p>';
-  }
-}
-    
-
     function generateStudentCards(students) {
       const container = document.getElementById("studentCards");
       container.innerHTML = ''; 
@@ -66,8 +60,6 @@
       students.forEach(student => {
         const card = document.createElement("a");
         card.classList.add("student-card");
-        
-        // Link to the template page, passing the student's ID in the URL
         card.href = `student.html?id=${student.id}`;
 
         card.innerHTML = `
