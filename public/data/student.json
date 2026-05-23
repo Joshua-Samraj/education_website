@@ -80,9 +80,9 @@
   {
     "id": "LHCTFS_001",
     "name": "A.Manish kumar",
-    "age": 13,
+    "age": "14",
     "gender": "Male",
-    "grade": "8th Grade",
+    "grade": "9th Grade",
     "school": "K.R.Govt.Hr.Sec.School",
     "location": "Reddiarpatti,Tirunelveli,Tamil Nadu",
     "performance": "Scoring above 85% in all subjects",
@@ -97,9 +97,9 @@
   {
     "id": "LHCTFS_002",
     "name": "A.Subarna",
-    "age": 15,
+    "age": "15",
     "gender": "Female",
-    "grade": "11th Grade",
+    "grade": "12th Grade",
     "school": "Govt Girls Hr Sec School",
     "location": "Itteri Pudhu Kulam,Tirunelveli",
     "performance": "Hardworking student with consistent grades",
