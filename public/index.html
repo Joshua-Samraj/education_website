@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="EN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,13 +11,13 @@
   
   <meta property="og:type" content="website">
   <meta property="og:title" content="Educational Donation Fund - Living Hope Charitable Trust">
-  <meta property="og:description" content="Join the 2025 Educational Fundraising. Empower a child's future and get 80G tax exemption on your generous donation.">
+  <meta property="og:description" content="Join the 2026 Educational Fundraising. Empower a child's future and get 80G tax exemption on your generous donation.">
   <meta property="og:image" content="image/thumbline.png">
   <meta property="og:url" content="https://living-hope-charitable-education-website-liart.vercel.app/">
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Educational Donation Fund - Living Hope Charitable Trust">
-  <meta name="twitter:description" content="Join the 2025 Educational Fundraising. Empower a child's future and get 80G tax exemption.">
+  <meta name="twitter:description" content="Join the 2026 Educational Fundraising. Empower a child's future and get 80G tax exemption.">
   <meta name="twitter:image" content="image/thumbline.png">
 
   <link rel="stylesheet" href="css/style.css">
@@ -31,7 +31,7 @@
       <div class="logo-text">
         <h1 style="font-size: 1.3rem;">Living Hope Charitable Trust</h1>
         <strong class="spark-text">FUTURE SPARKS</strong>
-        <p>Join the 2025 Educational Fundraising | Empower a Child's Future</p>
+        <p>Join the 2026 Educational Fundraising | Empower a Child's Future</p>
         <a href="tel:9500561937" class="donate-btn" style="background-color:#e7681b;">CONTACT US</a>
       </div>
     </header>
@@ -50,7 +50,23 @@
     </section>
   </div>
 
-  <script>
+<script>
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.15
+    };
+
+    const cardObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('hidden');
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
     async function fetchStudentData() {
       try {
         const response = await fetch('data/student.json');
@@ -64,7 +80,6 @@
         generateStudentCards(activeStudents);
 
       } catch (error) {
-        console.error('Error fetching student data:', error);
         document.getElementById("studentCards").innerHTML = '<p style="text-align: center; color: red;">Failed to load student data. Please try again later.</p>';
       }
     }
@@ -73,10 +88,12 @@
       const container = document.getElementById("studentCards");
       container.innerHTML = ''; 
 
-      students.forEach(student => {
+      students.forEach((student, index) => {
         const card = document.createElement("a");
-        card.classList.add("student-card");
+        card.classList.add("student-card", "hidden");
         card.href = `student.html?id=${student.id}`;
+
+        card.style.animationDelay = `${(index % 4) * 0.1}s`;
 
         const fallbackImg = (student.gender && (student.gender.toLowerCase() === 'female' || student.gender.toLowerCase() === 'girl')) 
           ? 'image/girl.png' 
@@ -92,10 +109,12 @@
           <p>(${student.details})</p>
         `;
         container.appendChild(card);
+        
+        cardObserver.observe(card);
       });
     }
 
-    window.onload = fetchStudentData;
+    document.addEventListener("DOMContentLoaded", fetchStudentData);
   </script>
 </body>
 </html>

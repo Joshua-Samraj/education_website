@@ -10,53 +10,48 @@ header {
   background: linear-gradient(135deg, #013f4a, #035f74, #013f4a, #035f74);
   color: #ffffff;
   text-align: center;
-  padding: 10px
-  
-  
-  
+  padding: 10px;
 }
-
-/* Make header smaller on screens smaller than 600px */
-
 
 h1 {
   text-shadow: #000000 1px 1px 1px;
+  margin-top: 0;
 }
+
 .logo {
-  height:180px;
-  width:270px;
+  height: 180px;
+  width: 270px;
   float: left;
   margin-left: 30px;
   margin-top: 5px;
   box-shadow: #000000 0px 0px 1px;
   border-radius: 10px;
-  
 }
+
 .logo-text {
   margin-right: 20px;
-  
 }
+
 .wrapper {
-  padding: 0 20px; /* 30px space on left and right */
+  padding: 0 20px;
   max-width: 1200px;
   margin: auto;
 }
 
-/* .logo {
-  height:200px;
-  width:250px;
-  float: left;
-} */
 .students {
   padding: 2rem;
   max-width: 900px;
   margin: auto;
 }
 
-
-
 .student-card h3 {
   margin-top: 0;
+  margin-bottom: 5px; /* Pulls the age paragraph closer to the name */
+}
+
+.student-card p {
+  margin: 4px 0; /* Reduces the gap between Age, Class, Location, etc. */
+  line-height: 1.3; /* Keeps text readable if it wraps to a second line */
 }
 
 button {
@@ -67,37 +62,38 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
+
+button:hover {
+  background-color: #218838;
+}
+
 .student-img {
   height: 150px;
   width: 150px;
   border-radius: 20%;
   float: right;
   margin-right: 20px;
-  
-  
 }
 
 .verify-img {
   height: 100px;
   width: 125px;
   border-radius: 20%;
-  float:right;
+  float: right;
   margin-right: 20px;
   margin-top: 20px;
-  
-  
 }
 
 .password-container {
   position: relative;
   width: 100%;
-  max-width: 350px; /* You can adjust this */
+  max-width: 350px;
   margin: 0 auto;
 }
 
 .form-input {
   width: 100%;
-  padding: 10px 40px 10px 12px; /* Extra right padding for the icon */
+  padding: 10px 40px 10px 12px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -106,8 +102,9 @@ button {
 }
 
 .form-input:focus {
-  border-color: #007BFF;
+  border-color: #007bff;
   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  outline: none;
 }
 
 .toggle-password {
@@ -126,33 +123,26 @@ button {
 }
 
 .stationary-btn {
-  background-color: #e61d3f; 
-  font-size: 1.9rem; 
-  text-align: center; 
-  width: 280px; 
-  height: 65px; 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  color: white; 
-  text-decoration: none; 
+  background-color: #e61d3f;
+  font-size: 1.9rem;
+  text-align: center;
+  width: 280px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
   border-radius: 8px;
-  margin: 0 auto; /* This centers the button horizontally */
+  margin: 0 auto;
 }
-
-.form-input:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-  outline: none;
-}
-
 
 .spark-text {
   color: #ff0000;
   animation: thunderEffect 1.8s infinite;
   text-shadow: 0 0 5px #ff0000;
   font-size: 2.7rem;
-  margin-left: 15PX;
+  margin-left: 15px;
 }
 
 @keyframes thunderEffect {
@@ -185,13 +175,11 @@ button {
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  /* gap: 1rem; */
   justify-content: center;
   perspective: 1000px;
-  font-size: 1.4rem; 
+  font-size: 1.4rem;
 }
 
-/* Two-column layout on larger screens */
 .student-card {
   flex: 1 1 calc(50% - 1rem);
   box-sizing: border-box;
@@ -202,83 +190,39 @@ button {
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 1rem;
-  margin-bottom: 1rem;
-  box-shadow: 0 2px 50px rgba(255, 255, 255, 0.05);
-  transition: transform 0.2s ease;
-}
-
-/* Full-width cards on smaller screens */
-@media (max-width: 410px) {
-  .student-card {
-    flex: 1 1 100%;
-  }
-
-  header {
-    background: linear-gradient(135deg, #013f4a, #035f74, #013f4a, #035f74);
-    color: #ffffff;
-    text-align: center;
-    padding: 10px
-    
-    
-  }
-  .logo {
-    height:100px;
-    width:150px;
-    float: left;
-    
-  }
-}
-
-button:hover {
-  background-color: #218838;
-}
-
-footer {
-  text-align: center;
-  background-color: #343a40;
-  color: white;
-  padding: 1rem;
-}
-.student-card {
-  color: #ffffff;
-  display: block;
-  text-decoration: none;
-  width: auto;
-  background: linear-gradient(135deg, #013f4a, #035f74, #013f4a, #035f74);
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 1rem;
   margin-bottom: 1.5rem;
   box-shadow: 0 2px 50px rgba(255, 255, 255, 0.05);
   transition: transform 0.2s ease;
   transform-style: preserve-3d;
 }
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1; /* behind your HTML */
-}
+
 .student-card:hover {
   background: #285c68;
   color: #cdeb6b;
   box-shadow: #000000 0px 0px 10px;
-  
-
-  transform: rotateY(-5deg) scale(1.02); /* You can tweak the degrees */
+  transform: rotateY(-5deg) scale(1.02);
 }
 
-/* ===============login modal================= */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* =============== Login Modal ================= */
 #mainContent.blurred {
   filter: blur(5px);
   pointer-events: none;
   user-select: none;
 }
+
 .logout-btn {
   float: right;
   margin-top: 1rem;
   margin-right: 1rem;
 }
+
 .modal {
   display: none;
   position: fixed;
@@ -289,24 +233,22 @@ canvas {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(12px); /* For Safari support */
+  -webkit-backdrop-filter: blur(12px);
   margin: 10% auto;
   padding: 2rem;
   border-radius: 10px;
   width: 90%;
   max-width: 400px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid #ccc;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-  color: #fff; /* Optional: to ensure text contrasts well */
-  border-color: #ccc;
+  color: #fff;
 }
-
 
 .modal-content input {
   display: block;
@@ -332,22 +274,16 @@ canvas {
   cursor: pointer;
 }
 
-
 .container {
   max-width: 800px;
   margin: 2rem auto;
   background-color: white;
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-h1 {
-  margin-top: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .info p {
-  
   font-size: 1.1rem;
   margin: 0.5rem 0;
 }
@@ -366,13 +302,6 @@ h1 {
 
 .student-header {
   text-align: center;
-  
-}
-
-.student-img {
-  height: 150px;
-  width: 150px;
-  border-radius: 20%;
 }
 
 .Serial_number {
@@ -398,9 +327,7 @@ h1 {
   box-shadow: #000000 0px 0px 10px;
 }
 
-
 .scroll-text {
-  
   width: 100%;
   overflow: hidden;
   background-color: #000000;
@@ -428,244 +355,7 @@ h1 {
   }
 }
 
-
-/* Existing CSS remains the same until the media queries */
-
 /* =============== Responsive Media Queries ================= */
-@media (max-width: 768px) {
-  .logo {
-    height: 150px;
-    width: 170px;
-    float: left;
-    border-radius: 10px;
-    
-    margin-left: 10px;
-  }
-  
-  header {
-
-    
-    padding: 15px 0;
-  }
-
-  .student-card:hover {
-    background: #285c68;
-    color: #cdeb6b;
-    box-shadow: #000000 0px 0px 10px;
-    
-  
-    
-  }
-  
-  .wrapper {
-    padding: 0 15px;
-  }
-  
-  .student-card {
-    flex: 1 1 100%;
-    margin-bottom: 1rem;
-  }
-  
-  .student-img, .verify-img {
-    float: none;
-    display: block;
-    margin: 0 auto 15px;
-  }
-  
-  .modal-content {
-    margin: 20% auto;
-    width: 85%;
-  }
-  
-  .container {
-    margin: 1rem auto;
-    padding: 1rem;
-  }
-  
-  .info p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .logo {
-    height: 70px;
-    width: 110px;
-    float: left;
-    margin-right: 10px;
-  }
-  .student-card:hover {
-    background: #285c68;
-    color: #cdeb6b;
-    box-shadow: #000000 0px 0px 10px;
-    
-  
-   
-  }
-  
-  
-  
-  h1 {
-    font-size: 1.5rem;
-    margin-top: 130px;
-  }
-  
-  .students {
-    padding: 1rem;
-  }
-  
-  .student-img {
-    height: 120px;
-    width: 120px;
-  }
-  
-  .verify-img {
-    height: 20px;
-    width: 70px;
-  }
-  
-  .scroll-text p {
-    font-size: 0.9rem;
-    animation: scroll-left 15s linear infinite;
-  }
-  
-  .modal-content {
-    padding: 1.5rem;
-  }
-  
-  .donate-btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-  
-  .Serial_number {
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 320px) {
-  .logo {
-    height: 50px;
-    width: 100px;
-    margin-right: 10px;
-  }
-  .student-card:hover {
-    background: #285c68;
-    color: #cdeb6b;
-    box-shadow: #000000 0px 0px 10px;
-    
-  
-   
-  }
-  header {
-    padding: 9px 0;
-    
-  }
-
-  h1 {
-    margin-top: 72px;
-  }
-  
-  .student-card {
-    padding: 0.8rem;
-  }
-
-  }
-  .scroll-text {
-    padding: 5px 0;
-  }
-  
-  .scroll-text p {
-    font-size: 0.8rem;
-  }
-  
-  .modal-content {
-    margin: 25% auto;
-    padding: 1rem;
-  }
-
-
-
-
-
-@media (max-width: 800px) {
-  .logo {
-    height: 80px;
-    width: 110px;
-    margin-right: 80px;
-    margin-left: 80px;
-    margin-top: 20px;
-    float: none;
-  }
-.stationary-btn {
-  background-color: #e61d3f; 
-  font-size: 1.9rem; 
-  text-align: center; 
-  width: 280px; 
-  height: 65px; 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  color: white; 
-  text-decoration: none; 
-  border-radius: 8px;
-  margin: 0 auto; /* This centers the button horizontally */
-}
-
-  .student-card:hover {
-    background: #285c68;
-    color: #cdeb6b;
-    box-shadow: #000000 0px 0px 10px;
-    
-  
-   
-  }
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    perspective: 1000px;
-    text-align: center;
-  }
-  header {
-    padding: 9px 0;
-    
-  }
-
-  h1 {
-    margin-top: 10px;
-  }
-  .donate-btn {
-    height: 30px;
-    width: 60px;
-    padding: 0.5rem 1rem;
-    font-size: 1.3rem;
-    text-align: center;
-  }
-  
-  .student-card {
-    padding: 0.8rem;
-  }
-  
-  .scroll-text {
-    padding: 5px 0;
-  }
-  
-  .scroll-text p {
-    font-size: 0.8rem;
-  }
-  
-  .modal-content {
-    margin: 25% auto;
-    padding: 1rem;
-  }
-}
-/* Existing remaining CSS stays the same */
-
-/* =============== Responsive Media Queries ================= */
-/* Replace all existing media queries at the bottom of your CSS with this block */
-
 @media (max-width: 800px) {
   header {
     display: flex;
@@ -673,7 +363,7 @@ h1 {
     align-items: center;
     padding: 15px 10px;
   }
-  
+
   .logo {
     float: none;
     margin: 0 0 10px 0;
@@ -694,6 +384,8 @@ h1 {
   .card-container {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
+    text-align: center;
   }
 
   .student-card {
@@ -701,15 +393,22 @@ h1 {
     width: 100%;
     max-width: 500px;
     margin-bottom: 1.5rem;
-    transform: none !important; /* Disable 3D hover on mobile to prevent sticky taps */
-  }
-  
-  .student-card:active {
-    background: #285c68;
-    transform: scale(0.98) !important; /* Smooth tap feedback instead of hover */
+    transform: none !important;
   }
 
-  .student-img, .verify-img {
+  .student-card:hover {
+    background: #285c68;
+    color: #cdeb6b;
+    box-shadow: #000000 0px 0px 10px;
+  }
+
+  .student-card:active {
+    background: #285c68;
+    transform: scale(0.98) !important;
+  }
+
+  .student-img,
+  .verify-img {
     float: none;
     display: block;
     margin: 0 auto 15px auto;
@@ -719,11 +418,33 @@ h1 {
     width: 90%;
     font-size: 1.6rem;
   }
-  
+
   .donate-btn {
     width: auto;
     padding: 12px 20px;
     font-size: 1.1rem;
+  }
+
+  .container {
+    margin: 1rem auto;
+    padding: 1rem;
+  }
+
+  .info p {
+    font-size: 1rem;
+  }
+
+  .modal-content {
+    margin: 25% auto;
+    padding: 1rem;
+  }
+
+  .scroll-text {
+    padding: 5px 0;
+  }
+
+  .scroll-text p {
+    font-size: 0.8rem;
   }
 }
 
@@ -747,11 +468,16 @@ h1 {
     width: 120px;
   }
 
+  .verify-img {
+    height: 20px;
+    width: 70px;
+  }
+
   .scroll-text p {
     font-size: 0.9rem;
     animation: scroll-left 12s linear infinite;
   }
-  
+
   .modal-content {
     width: 90%;
     padding: 1.5rem;
@@ -780,5 +506,18 @@ h1 {
   .donate-btn {
     font-size: 0.9rem;
     padding: 10px 15px;
+  }
+
+  .scroll-text {
+    padding: 5px 0;
+  }
+
+  .scroll-text p {
+    font-size: 0.8rem;
+  }
+
+  .modal-content {
+    margin: 25% auto;
+    padding: 1rem;
   }
 }
