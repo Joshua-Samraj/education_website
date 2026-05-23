@@ -47,7 +47,7 @@
   },
   {
     "id": "LHCTFS_004",
-    "name": "J.Athista",
+    "name": "J.Abinsha",
     "age": "5",
     "gender": "Female",
     "grade": "1st Grade",
@@ -63,10 +63,10 @@
   },
   {
     "id": "LHCTFS_005",
-    "name": "J.Abinsha",
+    "name": "J.Athista",
     "age": "9",
     "gender": "Female",
-    "grade": "4th Grade",
+    "grade": "5th Grade",
     "school": "Sri Sarada Matric.hr.Sec.School,Ariyakulam,Tirunelveli",
     "location": "KTC Nagar",
     "performance": "Excellent in academics and extracurriculars",
