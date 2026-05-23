@@ -665,3 +665,123 @@ h1 {
   }
 }
 /* Existing remaining CSS stays the same */
+
+/* =============== Responsive Media Queries ================= */
+/* Replace all existing media queries at the bottom of your CSS with this block */
+
+@media (max-width: 800px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 10px;
+  }
+  
+  .logo {
+    float: none;
+    margin: 0 0 10px 0;
+    height: 100px;
+    width: 150px;
+  }
+
+  .logo-text {
+    margin: 0;
+    text-align: center;
+  }
+
+  h1 {
+    margin-top: 10px;
+    font-size: 1.5rem !important;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .student-card {
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 1.5rem;
+    transform: none !important; /* Disable 3D hover on mobile to prevent sticky taps */
+  }
+  
+  .student-card:active {
+    background: #285c68;
+    transform: scale(0.98) !important; /* Smooth tap feedback instead of hover */
+  }
+
+  .student-img, .verify-img {
+    float: none;
+    display: block;
+    margin: 0 auto 15px auto;
+  }
+
+  .stationary-btn {
+    width: 90%;
+    font-size: 1.6rem;
+  }
+  
+  .donate-btn {
+    width: auto;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 80px;
+    width: 120px;
+  }
+
+  h1 {
+    font-size: 1.3rem !important;
+  }
+
+  .spark-text {
+    font-size: 1.8rem;
+    margin-left: 0;
+  }
+
+  .student-img {
+    height: 120px;
+    width: 120px;
+  }
+
+  .scroll-text p {
+    font-size: 0.9rem;
+    animation: scroll-left 12s linear infinite;
+  }
+  
+  .modal-content {
+    width: 90%;
+    padding: 1.5rem;
+    margin: 20% auto;
+  }
+}
+
+@media (max-width: 320px) {
+  .logo {
+    height: 60px;
+    width: 90px;
+  }
+
+  h1 {
+    font-size: 1.1rem !important;
+  }
+
+  .student-card {
+    padding: 1rem;
+  }
+
+  .spark-text {
+    font-size: 1.5rem;
+  }
+
+  .donate-btn {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+}
