@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title id="pageTitle">Student Details</title>
-  
+  <meta name="title" id="meta_title" content="Support a Student's Education" />
+  <meta name="description" id="meta_description" content="Your donation can be the turning point in this student’s life." />
   <meta property="og:type" content="website" />
   <meta property="og:url" id="og_url" content="" />
   <meta property="og:title" id="og_title" content="Support a Student's Education" />
@@ -83,6 +84,10 @@
         : 'image/boy.png';
 
       document.getElementById('pageTitle').textContent = `${student.name} - Details`;
+      
+      document.getElementById('meta_title').setAttribute("content", `Support ${student.name}'s Education`);
+      document.getElementById('meta_description').setAttribute("content", `Help ${student.name} from ${student.location} with their education. Need: ${student.need} for ${student.details}.`);
+
       document.getElementById('og_title').setAttribute("content", `Support ${student.name}'s Education`);
       document.getElementById('og_description').setAttribute("content", `Help ${student.name} from ${student.location} with their education. Need: ${student.need} for ${student.details}.`);
       
