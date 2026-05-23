@@ -166,9 +166,8 @@
     "id": "LHCTFS_009",
     "name": "Sathya.K",
     "age": "6",
-    "gender": "Female",
+    "gender": "Male",
     "grade": "UKG",
-    "school": "School, Sankarankovil",
     "location": "Sankarankovil , Tenkasi",
     "performance": "Curious and playful beginner",
     "background": "Sathya is just beginning her educational journey. Her family relies on minimal daily wages, making it very tough to afford basic early schooling needs like books, bags, uniforms, and transportation.",
@@ -177,6 +176,7 @@
     "image": "image/sat2hya.png",
     "detailPage": "student.html?id=LHCTFS_009",
     "payment_link": "https://rzp.io/rzp/R6yGyX4",
-    "status": "active"
+    "status": "active",
+    "school": "undefined"
   }
 ]
