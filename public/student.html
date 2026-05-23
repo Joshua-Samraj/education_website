@@ -29,16 +29,16 @@
       <h1 class="Serial_number" id="s_id">ID</h1>
     </div>
 
-    <p><strong>Age:</strong> <span id="s_age"></span></p>
-    <p><strong>Class:</strong> <span id="s_grade"></span></p>
-    <p><strong id="s_school_label">School / College:</strong> <span id="s_school"></span></p>
-    <p><strong>Location:</strong> <span id="s_location"></span></p>
-    <p><strong>Academic Performance:</strong> <span id="s_performance"></span></p>
-    <p class="donate-section">
+    <p id="p_age"><strong>Age:</strong> <span id="s_age"></span></p>
+    <p id="p_grade"><strong>Class:</strong> <span id="s_grade"></span></p>
+    <p id="p_school"><strong id="s_school_label">School / College:</strong> <span id="s_school"></span></p>
+    <p id="p_location"><strong>Location:</strong> <span id="s_location"></span></p>
+    <p id="p_performance"><strong>Academic Performance:</strong> <span id="s_performance"></span></p>
+    <p id="p_background" class="donate-section">
       <strong>Family Background:</strong> <span id="s_background"></span>
     </p>
-    <h3 style="color: rgb(237, 250, 0); background-color: #2c3e50; padding: 10px; border-radius: 5px;">
-      <strong>Help Needed:</strong> <span id="s_need"></span> for <span id="s_details"></span>
+    <h3 id="p_need" style="color: rgb(237, 250, 0); background-color: #2c3e50; padding: 10px; border-radius: 5px;">
+      <strong>Help Needed:</strong> <span id="s_need"></span> <span id="s_details_wrapper">for <span id="s_details"></span></span>
     </h3>
   </div>
 
@@ -100,27 +100,52 @@
       document.getElementById('s_name_header').textContent = student.name;
       document.getElementById('s_name_cta').textContent = student.name;
       document.getElementById('s_id').textContent = student.id;
-      document.getElementById('s_age').textContent = student.age;
-      document.getElementById('s_grade').textContent = student.grade;
       
-      // Dynamic School/College Label Logic
-      const schoolLabel = document.getElementById('s_school_label');
-      const schoolData = student.school ? student.school.toLowerCase() : '';
-      
-      if (schoolData.includes('college')) {
-        schoolLabel.textContent = 'College:';
-      } else if (schoolData.includes('school')) {
-        schoolLabel.textContent = 'School:';
-      } else {
-        schoolLabel.textContent = 'School / College:';
-      }
-      document.getElementById('s_school').textContent = student.school || 'N/A';
+      const updateField = (fieldId, parentId, data) => {
+        if (data && data.toString().trim() !== '') {
+          document.getElementById(fieldId).textContent = data;
+          document.getElementById(parentId).style.display = '';
+        } else {
+          document.getElementById(parentId).style.display = 'none';
+        }
+      };
 
-      document.getElementById('s_location').textContent = student.location;
-      document.getElementById('s_performance').textContent = student.performance;
-      document.getElementById('s_background').textContent = student.background;
-      document.getElementById('s_need').textContent = student.need;
-      document.getElementById('s_details').textContent = student.details;
+      updateField('s_age', 'p_age', student.age);
+      updateField('s_grade', 'p_grade', student.grade);
+      updateField('s_location', 'p_location', student.location);
+      updateField('s_performance', 'p_performance', student.performance);
+      updateField('s_background', 'p_background', student.background);
+      
+      if (student.school && student.school.trim() !== '') {
+        const schoolLabel = document.getElementById('s_school_label');
+        const schoolData = student.school.toLowerCase();
+        if (schoolData.includes('college')) {
+          schoolLabel.textContent = 'College:';
+        } else if (schoolData.includes('school')) {
+          schoolLabel.textContent = 'School:';
+        } else {
+          schoolLabel.textContent = 'School / College:';
+        }
+        document.getElementById('s_school').textContent = student.school;
+        document.getElementById('p_school').style.display = '';
+      } else {
+        document.getElementById('p_school').style.display = 'none';
+      }
+
+      if (student.need || student.details) {
+        if (student.need) {
+          document.getElementById('s_need').textContent = student.need;
+        }
+        if (student.details) {
+          document.getElementById('s_details').textContent = student.details;
+          document.getElementById('s_details_wrapper').style.display = '';
+        } else {
+          document.getElementById('s_details_wrapper').style.display = 'none';
+        }
+        document.getElementById('p_need').style.display = '';
+      } else {
+        document.getElementById('p_need').style.display = 'none';
+      }
       
       const imgElement = document.getElementById('s_image');
       imgElement.src = student.image || fallbackImg;
