@@ -62,8 +62,12 @@
         card.classList.add("student-card");
         card.href = `student.html?id=${student.id}`;
 
+        const fallbackImg = (student.gender && (student.gender.toLowerCase() === 'female' || student.gender.toLowerCase() === 'girl')) 
+          ? 'image/girl.png' 
+          : 'image/boy.png';
+
         card.innerHTML = `
-          <img src="${student.image}" alt="${student.name}" class="student-img">
+          <img src="${student.image}" alt="${student.name}" class="student-img" onerror="this.onerror=null; this.src='${fallbackImg}';">
           <h3>${student.name}</h3>
           <p><strong>Age:</strong> ${student.age}</p>
           <p><strong>Class:</strong> ${student.grade}</p>

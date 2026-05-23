@@ -4,16 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title id="pageTitle">Student Details</title>
+  
+  <meta property="og:type" content="website" />
+  <meta property="og:url" id="og_url" content="" />
+  <meta property="og:title" id="og_title" content="Support a Student's Education" />
+  <meta property="og:description" id="og_description" content="Your donation can be the turning point in this student’s life." />
+  <meta property="og:image" id="og_image" content="image/logo_white.jpg" />
+
   <link rel="stylesheet" href="css/student.css" />
 </head>
 <body>
 
 <header>
   <h1>Student Details</h1>
-  <button onclick="triggerTranslate()" class="donate-btn translate-btn">Translate to Tamil</button>
 </header>
-
-<div id="google_translate_element"></div>
 
 <div class="container" id="studentContainer" style="display: none;">
   <h1 id="s_name_header">Student Name</h1>
@@ -38,7 +42,7 @@
   </div>
 
   <div class="donate-section">
-    <h2>Support <span id="s_name_cta">this student</span>'s Education</h2>
+    <h2>Support <span id="s_name_cta"></span>'s Education</h2>
     <p>"Your donation can be the turning point in this student’s life."</p>
     <a id="s_payment_link" href="qr.html" target="_blank" class="donate-btn">Donate Now</a>
   </div>
@@ -51,10 +55,11 @@
 </div>
 
 <script>
-  async function loadStudentData() {
-    // 1. Get the ID from the URL (e.g., student.html?id=LHCTFS_001)
+  document.addEventListener("DOMContentLoaded", async () => {
     const urlParams = new URLSearchParams(window.location.search);
     const studentId = urlParams.get('id');
+
+    document.getElementById('og_url').setAttribute("content", window.location.href);
 
     if (!studentId) {
       document.getElementById('statusMessage').innerHTML = '<h2>Error: No student ID provided.</h2><a href="index.html">Go Back</a>';
@@ -62,12 +67,10 @@
     }
 
     try {
-      // 2. Fetch the JSON file
       const response = await fetch('data/student.json');
       if (!response.ok) throw new Error('Network response was not ok');
       const students = await response.json();
 
-      // 3. Find the specific student by ID
       const student = students.find(s => s.id === studentId);
 
       if (!student) {
@@ -75,8 +78,20 @@
         return;
       }
 
-      // 4. Populate the HTML template with the student's data
+      const fallbackImg = (student.gender && (student.gender.toLowerCase() === 'female' || student.gender.toLowerCase() === 'girl')) 
+        ? 'image/girl.png' 
+        : 'image/boy.png';
+
       document.getElementById('pageTitle').textContent = `${student.name} - Details`;
+      document.getElementById('og_title').setAttribute("content", `Support ${student.name}'s Education`);
+      document.getElementById('og_description').setAttribute("content", `Help ${student.name} from ${student.location} with their education. Need: ${student.need} for ${student.details}.`);
+      
+      if(student.image) {
+        document.getElementById('og_image').setAttribute("content", window.location.origin + "/" + student.image);
+      } else {
+        document.getElementById('og_image').setAttribute("content", window.location.origin + "/" + fallbackImg);
+      }
+
       document.getElementById('s_name_header').textContent = student.name;
       document.getElementById('s_name_cta').textContent = student.name;
       document.getElementById('s_id').textContent = student.id;
@@ -89,54 +104,24 @@
       document.getElementById('s_need').textContent = student.need;
       document.getElementById('s_details').textContent = student.details;
       
-      // Handle Image
       const imgElement = document.getElementById('s_image');
-      imgElement.src = student.image;
+      imgElement.src = student.image || fallbackImg;
       imgElement.alt = student.name;
+      imgElement.onerror = function() {
+        this.onerror = null;
+        this.src = fallbackImg;
+      };
 
-      // Handle Link (This was failing before because s_payment_link didn't exist in HTML)
-      document.getElementById('s_payment_link').href =  "qr.html";
+      document.getElementById('s_payment_link').href = "qr.html";
 
-      // 5. Hide loading message and show the content
       document.getElementById('statusMessage').style.display = 'none';
       document.getElementById('studentContainer').style.display = 'block';
 
     } catch (error) {
-      console.error('Error fetching data:', error);
       document.getElementById('statusMessage').innerHTML = '<h2>Failed to load data. Please try again.</h2>';
     }
-  }
-
-  // Add dummy function to prevent console errors if clicked before Google Translate loads fully
-  function triggerTranslate() {
-    const translateCombo = document.querySelector('.goog-te-combo');
-    if (translateCombo) {
-      translateCombo.value = 'ta';
-      translateCombo.dispatchEvent(new Event('change'));
-    } else {
-      alert("Translation service is still loading...");
-    }
-  }
-
-  // Run when the page loads
-  window.onload = loadStudentData;
+  });
 </script>
-
-<script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({ 
-      pageLanguage: 'en',
-      includedLanguages: 'en,ta',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-      autoDisplay: false
-    }, 'google_translate_element');
-    
-    var style = document.createElement('style');
-    style.textContent = '.goog-te-banner-frame { display: none !important; }';
-    document.head.appendChild(style);
-  }
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
