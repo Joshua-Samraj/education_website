@@ -31,7 +31,7 @@
 
     <p><strong>Age:</strong> <span id="s_age"></span></p>
     <p><strong>Class:</strong> <span id="s_grade"></span></p>
-    <p><strong>School:</strong> <span id="s_school"></span></p>
+    <p><strong id="s_school_label">School / College:</strong> <span id="s_school"></span></p>
     <p><strong>Location:</strong> <span id="s_location"></span></p>
     <p><strong>Academic Performance:</strong> <span id="s_performance"></span></p>
     <p class="donate-section">
@@ -102,7 +102,20 @@
       document.getElementById('s_id').textContent = student.id;
       document.getElementById('s_age').textContent = student.age;
       document.getElementById('s_grade').textContent = student.grade;
-      document.getElementById('s_school').textContent = student.school;
+      
+      // Dynamic School/College Label Logic
+      const schoolLabel = document.getElementById('s_school_label');
+      const schoolData = student.school ? student.school.toLowerCase() : '';
+      
+      if (schoolData.includes('college')) {
+        schoolLabel.textContent = 'College:';
+      } else if (schoolData.includes('school')) {
+        schoolLabel.textContent = 'School:';
+      } else {
+        schoolLabel.textContent = 'School / College:';
+      }
+      document.getElementById('s_school').textContent = student.school || 'N/A';
+
       document.getElementById('s_location').textContent = student.location;
       document.getElementById('s_performance').textContent = student.performance;
       document.getElementById('s_background').textContent = student.background;
