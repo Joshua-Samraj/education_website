@@ -108,7 +108,8 @@
     "details": "School Fees, Uniform, Bag",
     "image": "image/subarna234.png",
     "detailPage": "student.html?id=LHCTFS_002",
-    "payment_link": "https://rzp.io/rzp/krU7w0uS"
+    "payment_link": "https://rzp.io/rzp/krU7w0uS",
+    "status": "inactive"
   },
   {
     "id": "LHCTFS_006",
