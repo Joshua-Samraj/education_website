@@ -35,14 +35,14 @@
   {
     "id": "LHCTFS_003",
     "name": "G.Bramamuthu",
-    "age": 15,
-    "gender": "Male",
-    "grade": "12th Grade",
-    "school": "Govt Hr Sec School, Anavarathanallur",
-    "location": "Anavarathanallur,Thoothukkudi, Tamil Nadu",
+    "age": "16",
+    "gender": "Female",
+    "grade": "BA in Tamil Literature",
+    "school": "Sarah Tucker College",
+    "location": "Vasantha Nager, Tirunelveli, Tamil Nadu 627007",
     "performance": "Performing well in science and mathematics",
     "background": "Bramamuthu is highly interested in continuing his education. His family's primary income relies on seasonal agriculture, making it difficult to pay for crucial 12th-grade tuitions, uniforms, and educational materials.",
-    "need": "₹14,500",
+    "need": "₹13,500",
     "details": "Books, Uniform, Tuition Fees, Bag",
     "image": "image/bramamuthu.png",
     "detailPage": "student.html?id=LHCTFS_003",
@@ -95,7 +95,7 @@
     "image": "image/1776435636212.png",
     "detailPage": "student.html?id=LHCTFS_006",
     "payment_link": "https://rzp.io/rzp/9bpFu0w",
-    "status": "active"
+    "status": "inactive"
   },
   {
     "id": "LHCTFS_007",
